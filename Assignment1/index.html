@@ -98,6 +98,7 @@
       #header-hamburger:hover::before {
         position: absolute;
         content: "";
+        z-index: -1;
         left: 1px;
         top: 1px;
         width: 44px;
@@ -115,6 +116,14 @@
       #main {
         height: 2000px;
       }
+      .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+      }
     </style>
   </head>
   <body>
@@ -123,6 +132,7 @@
         <div id="header">
           <button id="header-hamburger">
             <div></div>
+            <span class="blind">확장 영역</span>
           </button>
         </div>
         <div id="search"></div>
