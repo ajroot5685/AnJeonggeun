@@ -69,6 +69,9 @@
         --color_dic: #031f5f;
         --color_dic_rgb: 3, 31, 95;
       }
+      * {
+        box-sizing: border-box;
+      }
       body,
       html {
         margin: 0;
@@ -85,17 +88,23 @@
         text-align: left;
         position: relative;
       }
-      #header-hamburger {
+      #header-hamburger,
+      #header-naverpay,
+      #header-notice {
         position: absolute;
         top: 18px;
-        left: -10px;
         padding: 10px;
         display: inline-block;
         background: none;
         border: none;
         cursor: pointer;
       }
-      #header-hamburger:hover::before {
+      #header-hamburger {
+        left: -10px;
+      }
+      #header-hamburger:hover::before,
+      #header-naverpay:hover::before,
+      #header-notice:hover::before {
         position: absolute;
         content: "";
         z-index: -1;
@@ -106,12 +115,28 @@
         background-color: var(--color_option_bg);
         border-radius: 50%;
       }
-      #header-hamburger > div {
+      #header-hamburger > div,
+      #header-naverpay > div,
+      #header-notice > div {
         width: 26px;
         height: 26px;
         background-image: url(./sp_main.png);
         background-position: -335px -284px;
         background-size: 422px 405px;
+      }
+      #header-naverpay {
+        right: 42px;
+        padding: 10px 8px;
+      }
+      #header-naverpay > div {
+        width: 30px;
+        background-position: -31px -316px;
+      }
+      #header-notice {
+        right: -10px;
+      }
+      #header-notice > div {
+        background-position: -364px -27px;
       }
       #main {
         height: 2000px;
@@ -133,6 +158,14 @@
           <button id="header-hamburger">
             <div></div>
             <span class="blind">확장 영역</span>
+          </button>
+          <button id="header-naverpay">
+            <div></div>
+            <span class="blind">네이버 페이</span>
+          </button>
+          <button id="header-notice">
+            <div></div>
+            <span class="blind">알림</span>
           </button>
         </div>
         <div id="search"></div>
