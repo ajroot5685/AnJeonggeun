@@ -4,6 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div id="left">
+          <button><img id="logo" src="./githublogo.png" alt="로고" /></button>
+          <button class="arrow">Why GitHub?</button>
+          <button>Team</button>
+          <button>Enterprise</button>
+          <button class="arrow">Explore</button>
+          <button>Marketplace</button>
+          <button class="arrow">Pricing</button>
+        </div>
+        <div id="right">
+          <form id="search" action="">
+            <input id="search-input" type="text" placeholder="Search GitHub" />
+            <div id="search-right">
+              <button id="search-button">/</button>
+            </div>
+          </form>
+          <button onclick="alert('로그인 버튼입니다.');">Sign in</button>
+          <button id="signup" onclick="alert('회원가입 버튼입니다.');">
+            Sign up
+          </button>
+        </div>
+      </div>
+      <div id="main">
+        <div id="main-left">
+          <div id="main-title">Built for developers</div>
+          <div id="main-content">
+            GitHub is a development platform inspired by the way you work. From
+            <span class="highlight">open source</span> to
+            <span class="highlight">business</span>, you can host and review
+            code, manage projects, and build software alongside 50 million
+            developers.
+          </div>
+        </div>
+        <div id="main-right">
+          <form action="" id="signform" class="form">
+            <div class="form-control">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                oninput="checkfill('username')"
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input type="text" id="email" oninput="checkfill('email')" />
+            </div>
+            <div class="form-control">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                oninput="checkfill('password')"
+              />
+            </div>
+            <p>
+              Make sure it's at least 15 characters OR at least 8 characters
+              including a number and a lowercase letter.
+              <span class="blue">Learn more.</span>
+            </p>
+            <button
+              id="greenbtn"
+              onclick="alert('초록색 회원가입 버튼입니다.');"
+            >
+              Sign up for GitHub
+            </button>
+            <p>
+              By clicking "Sign up for GitHub", you agree to our
+              <span class="blue">Terms of Service</span> and
+              <span class="blue">Privacy Statement.</span> We'll occasionally
+              send you account related emails.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <img src="./footer.png" alt="footer 이미지" />
+    </footer>
+    <script src="js.js"></script>
+  </body>
 </html>

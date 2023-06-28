@@ -1,0 +1,242 @@
+ul,
+ol {
+  list-style: none;
+}
+
+body,
+html {
+  font-size: 10.5px;
+  line-height: 10.5px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+#wrap {
+  background-color: rgb(43, 49, 55);
+  width: 100vw;
+  height: 700px;
+  display: flex;
+  flex-flow: column;
+}
+
+#header {
+  padding-top: 10px;
+  background: none;
+}
+
+#left,
+#right {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 60px;
+  position: relative;
+}
+
+#left {
+  float: left;
+  margin-left: 200px;
+}
+#right {
+  float: right;
+  margin-right: 200px;
+  align-items: center;
+}
+
+#left button,
+#right button {
+  color: white;
+  font-size: 1.6rem;
+  margin-left: 10px;
+}
+
+.arrow::after {
+  content: "";
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 8px;
+  margin-bottom: 3px;
+  border-top: 0.1rem solid darkgray;
+  border-right: 0.1rem solid darkgray;
+  transform: rotate(135deg);
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+}
+
+#search {
+  display: inline-flex;
+  width: 250px;
+  height: 40px;
+  padding-right: 10px;
+  background-color: rgba(166, 173, 184, 0.4);
+  border-radius: 10px;
+  text-align: left;
+  align-items: center;
+}
+
+#search-input {
+  flex: 1;
+  width: 200px;
+  height: 38px;
+  padding-left: 15px;
+  padding-top: 2px;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  background: none;
+}
+#search-input::placeholder {
+  color: #e4e4e4;
+}
+#search-input:focus::placeholder {
+  color: transparent;
+}
+#search-button {
+  padding: 1px 12px 1px 8px;
+  width: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#signup {
+  padding: 7px 8px 4px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+#main {
+  display: flex;
+}
+
+#main-left {
+  width: 55vw;
+  height: 650px;
+  flex-flow: column;
+  position: relative;
+  margin-top: 70px;
+  margin-right: 40px;
+}
+#main-right {
+  width: 45vw;
+  height: 650px;
+}
+#main-title,
+#main-content {
+  position: absolute;
+  right: 0;
+  text-overflow: ellipsis;
+  width: 700px;
+  display: inline-block;
+  text-align: left;
+}
+#main-title {
+  line-height: 90px;
+  font-size: 90px;
+  color: #e4e4e4;
+}
+#main-content {
+  line-height: 40px;
+  top: 220px;
+  font-size: 29px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.highlight {
+  color: #e4e4e4;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+#signform {
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  width: 420px;
+  height: 510px;
+  text-align: left;
+  padding: 30px;
+}
+
+#signform label {
+  font-size: 2rem;
+}
+
+#signform p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: gray;
+}
+
+.form-control {
+  display: flex;
+  flex-flow: column;
+  width: 300px;
+  height: 100px;
+}
+
+.form-control input {
+  flex: 1;
+  width: 400px;
+  font-size: 1.6rem;
+  padding-left: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  background: none;
+  margin: 15px 0;
+}
+#search-input::placeholder {
+  color: #e4e4e4;
+}
+#search-input:focus::placeholder {
+  color: transparent;
+}
+
+#greenbtn {
+  text-align: center;
+  width: 420px;
+  height: 70px;
+  margin: 10px 0;
+  font-size: 1.6rem;
+  color: #e4e4e4;
+  background-color: rgb(46, 188, 79);
+  border-radius: 5px;
+}
+
+.blue {
+  color: dodgerblue;
+}
+
+#footer {
+  width: 100vw;
+  height: 180px;
+  position: relative;
+}
+
+#footer img {
+  z-index: 1;
+  position: absolute;
+  top: -38px;
+  right: 250px;
+  height: 100%;
+}
