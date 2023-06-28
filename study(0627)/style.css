@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+
+/* reset.css */
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background-image: url("https://img.freepik.com/free-photo/santa-cruz-beach_181624-193.jpg?w=740&t=st=1687834337~exp=1687834937~hmac=7dc44aa686002cb0340737df1aa8efea951504ad46e4a956a8e683832d10e3bb");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Bagel Fat One", cursive;
+}
+
+#main h1 {
+  color: white;
+}
+
+#goals h1 {
+  color: deepskyblue;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.box {
+  margin: 0 10px;
+  background-color: white;
+  font-size: 24px;
+  padding: 36px;
+  border-radius: 30px;
+  color: deepskyblue;
+}
+
+.box span {
+  display: block;
+  font-size: 72px;
+}
+
+#goals {
+  background-color: white;
+  padding: 50px 60px;
+  border-radius: 30px;
+  color: deepskyblue;
+}
+
+#goals ul {
+  width: max-content;
+  margin-top: 55px;
+}
+
+#goals li {
+  font-size: 24px;
+  margin: 20px 0;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 10px;
+  text-decoration-color: blueviolet;
+}
