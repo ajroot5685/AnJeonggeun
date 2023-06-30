@@ -8,9 +8,9 @@
 
 - 두번째 과제 - bootstrap으로 클론 코딩하기
   😓 위치 조정, 크기 조절을 css 없이 하려니 생각보다 오래 걸렸습니다.
-<details>
-  <summary>클릭하여 토글</summary>
-  
-  ![두번째 과제](assignment2.png)
-</details>
+  <details>
+    <summary>구현 이미지</summary>
+    
+    ![두번째 과제](assignment2.png)
+  </details>
   
