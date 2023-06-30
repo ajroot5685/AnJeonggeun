@@ -12,29 +12,65 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
 
     <title>Bootstrap</title>
   </head>
   <body>
     <nav
-      class="navbar navbar-expand-md navbar-dark bg-dark position-relative fs-5"
+      class="navbar navbar-expand-md navbar-dark bg-dark position-fixed fixed-top fs-5"
     >
-      <ul class="navbar-nav m-2 mb-3">
-        <li class="nav-item text-light p-2 pe-3 fs-4">Pirogramming</li>
-        <li class="nav-item text-primary p-2 pe-3 pt-3">An-Jeong-geun</li>
-        <li class="nav-item text-light p-2 pe-3 pt-3">Intro</li>
-        <li class="nav-item text-secondary p-2 pe-3 pt-3">Highlights</li>
-        <li class="nav-item text-secondary p-2 pe-3 pt-3">Gallery</li>
-        <li class="nav-item text-secondary p-2 pe-3 pt-3">Contact</li>
-      </ul>
+      <div class="row w-100 m-1">
+        <div class="col-xl-2 mb-1 pt-3">
+          <a href="#main" class="nav-item text-light fs-4 d-inline-block"
+            >Pirogramming</a
+          >
+        </div>
+        <div
+          id="navbar"
+          class="col-xl-10 d-xl-flex justify-content-between pt-3"
+        >
+          <div id="nav-left" class="d-inline-block">
+            <div class="d-xl-inline-block mb-4 me-3">
+              <button class="nav-item text-primary">An-Jeong-geun</button>
+            </div>
+            <div class="d-xl-inline-block mb-4 me-3">
+              <a href="#intro" class="nav-item text-light">Intro</a>
+            </div>
+            <div class="d-xl-inline-block mb-4 me-3">
+              <a href="#highlights" class="nav-item text-secondary">
+                Highlights
+              </a>
+            </div>
+            <div class="d-xl-inline-block mb-4 me-3">
+              <a href="#gallery" class="nav-item text-secondary">Gallery</a>
+            </div>
+            <div class="d-xl-inline-block mb-4 me-3">
+              <a href="#contact" class="nav-item text-secondary">Contact</a>
+            </div>
+          </div>
+
+          <div id="nav-right" class="d-xl-inline-block me-5">
+            <button
+              class="btn btn-outline-success btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#nav-modal"
+            >
+              About
+            </button>
+          </div>
+        </div>
+      </div>
+
       <button
-        class="btn btn-outline-success btn-lg position-absolute end-0 me-4 mt-2"
-        data-bs-toggle="modal"
-        data-bs-target="#nav-modal"
+        class="navbar-toggler position-absolute top-0 end-0 mt-3 me-5 d-inline-block d-xl-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbar"
       >
-        About
+        <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="modal fade" id="nav-modal">
         <div class="modal-dialog">
           <div class="modal-content text-center bg-secondary text-light">
@@ -44,7 +80,7 @@
             <div class="modal-body">
               <h3>파이팅!</h3>
               <p>모두들 첫 과제 하느라 수고많으셨습니다!</p>
-              <p>힘들더라도 계속해서 힘들어요!</p>
+              <p>힘들더라도 계속해서 달려봐요!</p>
             </div>
             <div class="modal-footer">
               <button
@@ -74,7 +110,9 @@
         <div id="main-title" class="fs-1 fw-bold m-3">Pirogramming19</div>
         <div id="main-subtitle" class="fs-4 fw-bold mb-4">cheer up</div>
         <hr class="w-75" />
-        <button class="btn btn-primary btn-lg">Get Started!</button>
+        <a href="#intro" class="btn btn-primary btn-lg text-light"
+          >Get Started!</a
+        >
       </div>
       <div
         id="intro"
@@ -83,135 +121,162 @@
         <div id="intro-title" class="fs-1 fw-bold m-3 text-danger">
           Built On the Bootstrap Grid
         </div>
-        <div id="intro-content" class="fs-5 mb-4 text-light">
+        <div id="intro-content" class="fs-5 mb-4 text-light ps-5 pe-5 lh-base">
           Bootstrap's responsive grid comes in 4sizes of 'braeakpoints':
           tiny(xs). small(sm), medium(md) and large(lg). These 4 grid cites
           enables you creat responsive layouts that behave accordingly on
           different sizes
         </div>
-        <button class="btn btn-light btn-lg">Get Started!</button>
+        <a href="#highlights" class="btn btn-light btn-lg">Learn more</a>
       </div>
       <div
-        id="hightlights"
-        class="vw-100 vh-100 bg-secondary d-flex justify-content-center flex-column align-items-center text-light text-center"
+        id="highlights"
+        class="vw-100 bg-secondary d-flex justify-content-center flex-column align-items-center text-light text-center"
       >
-        <div id="hightlights-title" class="fs-1 fw-bold m-3 text-primary">
+        <div id="hightlights-title" class="fs-1 fw-bold m-3 text-primary mb-5">
           Flexible Layouts
         </div>
         <hr class="w-75 bg-dark" />
-        <div>
-          <img src="./desktop.png" alt="monitor" />
-          <p class="fs-4">Responsive</p>
-          <p class="fs-5">Yore cite looks good everywhere</p>
-        </div>
-        <div>
-          <img src="./facebook-like.png" alt="like" />
+        <div class="row mt-5 d-md-flex justify-content-around">
+          <div class="col-md-4 mt-5">
+            <img src="./desktop.png" alt="monitor" />
+            <p class="fs-3 mt-5 mb-5">Responsive</p>
+            <p class="fs-5">Yore cite looks good everywhere</p>
+          </div>
+          <div class="col-md-4 mt-5">
+            <img src="./facebook-like.png" alt="like" />
 
-          <p class="fs-4">Customizable</p>
-          <p class="fs-5">Easy to theme and customize with SASS</p>
-        </div>
-        <div>
-          <img src="./star.png" alt="star" />
+            <p class="fs-3 mt-5 mb-5">Customizable</p>
+            <p class="fs-5">Easy to theme and customize with SASS</p>
+          </div>
+          <div class="col-md-4 mt-5">
+            <img src="./star.png" alt="star" />
 
-          <p class="fs-4">Consistent</p>
-          <p class="fs-5">A mature, well-tested, stable codebase</p>
+            <p class="fs-3 mt-5 mb-5">Consistent</p>
+            <p class="fs-5">A mature, well-tested, stable codebase</p>
+          </div>
         </div>
       </div>
-      <div
-        id="gallery"
-        class="vw-100 vh-100 bg-secondary d-flex justify-content-center flex-column align-items-center text-light text-center"
-      >
-        <!-- <img src="./image1.jpg" />
-        <img src="./image2.jpg" />
-        <img src="./image3.jpg" />
-        <img src="./image4.jpg" />
-        <img src="./image5.jpg" />
-        <img src="./image6.jpg" /> -->
+      <div id="gallery" class="vw-100 bg-secondary text-light text-center p-5">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-12 col-md-6 col-xl-4">
+            <img class="img-fluid p-5" src="./image1.jpg" />
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <img class="img-fluid p-5" src="./image2.jpg" />
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <img class="img-fluid p-5" src="./image3.jpg" />
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <img class="img-fluid p-5" src="./image4.jpg" />
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <img class="img-fluid p-5" src="./image5.jpg" />
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <img class="img-fluid p-5" src="./image6.jpg" />
+          </div>
+        </div>
       </div>
       <div
         id="contact"
-        class="vw-100 vh-100 bg-secondary d-flex justify-content-center flex-column align-items-center text-center"
+        class="vw-100 bg-secondary d-flex justify-content-center flex-column align-items-center text-center p-5"
       >
         <div id="contact-title" class="fs-1 fw-bold m-3 text-primary">
           Get in Touch
         </div>
         <hr class="w-75 bg-dark" />
-        <form class="mt-5">
-          <div class="form-group">
+        <form class="mt-5 row">
+          <div class="form-group mt-3 col-12 col-md-4">
             <input type="" class="form-control" placeholder="name" />
           </div>
-          <div class="form-group">
+          <div class="form-group mt-3 col-12 col-md-4">
             <input type="" class="form-control" placeholder="email" />
           </div>
-          <div class="form-group">
+          <div class="form-group mt-3 col-12 col-md-4">
             <input type="" class="form-control" placeholder="phone" />
           </div>
-          <div class="form-group">
-            <input
+          <div class="form-group mt-3 col-12">
+            <textarea
               type=""
               class="form-control"
+              rows="5"
               placeholder="Your messages here"
-            />
+            ></textarea>
           </div>
-          <button
-            type="submit"
-            class="btn btn-primary btn-lg w-100"
-            data-bs-toggle="modal"
-            data-bs-target="#contact-modal"
-          >
-            Send
-          </button>
-          <div class="modal fade" id="contact-modal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header d-flex justify-content-center">
-                  <h5 class="modal-title fw-bold">Nice-Job!</h5>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    You clicked the button but it doesn't actually go anywhere
-                  </p>
-                  <p>Learn more at Bootstrap</p>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                  <button
-                    type="button"
-                    class="btn btn-primary w-100"
-                    data-bs-dismiss="modal"
-                  >
-                    Ok
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div class="mt-5">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg col-2"
+              data-bs-toggle="modal"
+              data-bs-target="#contact-modal"
+            >
+              Send
+            </button>
           </div>
         </form>
       </div>
     </main>
-    <footer class="bg-dark vw-100 vh-25 text-light">
-      <div>Information</div>
-      <div>Product</div>
-      <div>Services</div>
-      <div>Benefits</div>
-      <div>Developer</div>
-      <div>About</div>
-      <div>Contact us</div>
-      <div>Delivery Information</div>
-      <div>Privacy Policy</div>
-      <div>Trauma&Condition</div>
-      <div>Stay Posted</div>
-      <div class="form-group">
-        <input type="" class="form-control" placeholder="Tell me your email" />
-      </div>
-      <button
-        type="button"
-        class="btn btn-primary w-50"
-        data-bs-dismiss="modal"
-      >
-        Subscribe for updates
-      </button>
-    </footer>
 
+    <footer class="bg-dark vw-100 vh-25 text-white-50 ps-5 pe-5 pb-5">
+      <div class="ps-5 pe-5 d-xl-flex justify-content-center">
+        <div class="row fs-5 pt-5">
+          <div class="text-info">Information</div>
+          <div class="pt-2">Product</div>
+          <div class="pt-2">Services</div>
+          <div class="pt-2">Benefits</div>
+          <div class="pt-2">Developer</div>
+        </div>
+        <div class="row fs-5 pt-5">
+          <div class="text-info">About</div>
+          <div class="pt-2">Contact us</div>
+          <div class="pt-2">Delivery Information</div>
+          <div class="pt-2">Privacy Policy</div>
+          <div class="pt-2">Trauma&Condition</div>
+        </div>
+        <div class="row fs-5 pt-5">
+          <div class="text-info">Stay Posted</div>
+          <div class="form-group pt-3">
+            <input
+              type=""
+              class="form-control"
+              placeholder="Tell me your email"
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary btn-sm w-50 ms-3 mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#contact-modal"
+          >
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade" id="contact-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title fw-bold">Nice-Job!</h5>
+          </div>
+          <div class="modal-body">
+            <p>You clicked the button but it doesn't actually go anywhere</p>
+            <p>Learn more at Bootstrap</p>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              Ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Bootstrap Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
