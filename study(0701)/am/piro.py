@@ -1,3 +1,3 @@
 def print():
-    print('test')
+    print('test2')
     return
