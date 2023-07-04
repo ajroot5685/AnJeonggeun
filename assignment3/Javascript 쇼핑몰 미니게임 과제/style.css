@@ -99,3 +99,8 @@ body {
   margin-left: var(--base-space);
   font-size: var(--font-size);
 }
+
+.item.invisible {
+  background-color: var(--color-white);
+  display: none;
+}
