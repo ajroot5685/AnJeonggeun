@@ -50,6 +50,7 @@ function getTimeFormatString() {
 function recordClock() {
   const content = document.querySelector("#content");
   content.innerHTML += createRecord(stopwatch.innerText);
+  allselectcheck();
 }
 
 function createRecord(record) {
@@ -80,6 +81,27 @@ function selectAll() {
 function select(event) {
   const clickedDiv = event.parentNode;
   clickedDiv.classList.toggle("invisible");
+
+  allselectcheck();
+}
+
+function allselectcheck() {
+  const select = document.querySelectorAll(".list:not(.invisible)");
+  const count = select.length;
+
+  console.log(count);
+
+  const parent = document.querySelector("#content");
+  const tmp = parent.childElementCount;
+
+  console.log(tmp);
+
+  const all = document.querySelector("#selectall");
+  if (count == tmp) {
+    all.classList.remove("invisible");
+  } else {
+    all.classList.add("invisible");
+  }
 }
 
 function dlist() {
