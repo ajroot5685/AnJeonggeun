@@ -10,6 +10,23 @@ h2 {
   display: inline-block;
 }
 
+header {
+  display: flex;
+  justify-content: space-around;
+  width: 270px;
+}
+
+img {
+  width: 25px;
+  height: 25px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #clock {
   background: rgb(181, 191, 183);
   border-radius: 40px;
@@ -72,4 +89,20 @@ h2 {
 #content {
   height: 300px;
   background-color: white;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check {
+  width: 12px;
+  height: 6px;
+  border: 3px solid black;
+  border-top: 0;
+  border-right: 0;
+  transform: rotate(-45deg);
+  margin-bottom: 4px;
 }
