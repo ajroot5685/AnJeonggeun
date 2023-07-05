@@ -92,6 +92,7 @@ img,
 #content {
   height: 300px;
   background-color: white;
+  overflow-y: scroll;
 }
 
 .checkbox {
