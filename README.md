@@ -18,7 +18,7 @@
   😂 기능 구현보단 github, gitkraken에 익숙해지는 데에 집중했습니다. merge conflict 해결 쉽지 않네요...  
   ![세번째 과제](assignment3.png)
 
-- 네번째 과제 - 스탑워치
+- 네번째 과제 - 스탑워치  
   😀 지옥주가 지나간건가요! 앞의 과제들보다 빠르게 끝나서 좋네요!  
   querySelector를 사용하는 이유를 알 수 있었습니다.  
-  ![네번째 과제](assignment4.png)
+  ![네번째 과제](assignment4.PNG)
