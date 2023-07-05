@@ -33,6 +33,11 @@ function resetClock() {
   const content = document.querySelector("#content");
   content.innerHTML = "";
   time = 0;
+
+  const all = document.querySelector("#selectall");
+  if (!all.classList.contains("invisible")) {
+    all.classList.add("invisible");
+  }
 }
 
 function getTimeFormatString() {
