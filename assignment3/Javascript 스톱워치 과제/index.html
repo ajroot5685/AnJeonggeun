@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stopwatch</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./app.js" defer></script>
   </head>
   <body>
     <header>
@@ -15,18 +16,18 @@
       <div id="clock">
         <div id="time">00:00</div>
         <div id="clockbtn">
-          <button id="start" class="btn">start</button>
-          <button id="stop" class="btn">stop</button>
-          <button id="reset" class="btn">reset</button>
+          <button id="start" class="btn" onclick="startClock();">start</button>
+          <button id="stop" class="btn" onclick="stopClock();">stop</button>
+          <button id="reset" class="btn" onclick="resetClock();">reset</button>
         </div>
       </div>
       <div id="record">
         <div id="title">
-          <div id="selectall" class="checkbox">
+          <div id="selectall" class="checkbox invisible" onclick="selectAll();">
             <div class="check"></div>
           </div>
           <span>구간 기록</span>
-          <div id="trash" class="img">
+          <div id="trash" class="img" onclick="dlist();">
             <img src="./trash.png" alt="휴지통" />
           </div>
         </div>

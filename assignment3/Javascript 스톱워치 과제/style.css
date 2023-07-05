@@ -16,7 +16,8 @@ header {
   width: 270px;
 }
 
-img {
+img,
+.space {
   width: 25px;
   height: 25px;
 }
@@ -70,7 +71,8 @@ img {
   background: rgb(181, 191, 183);
 }
 
-#title {
+#title,
+.list {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,7 +81,8 @@ img {
   padding: 10px 30px;
 }
 
-#selectall {
+#selectall,
+.select {
   border: 3px solid black;
   border-radius: 20px;
   width: 27px;
@@ -105,4 +108,8 @@ img {
   border-right: 0;
   transform: rotate(-45deg);
   margin-bottom: 4px;
+}
+
+.invisible .check {
+  display: none;
 }
