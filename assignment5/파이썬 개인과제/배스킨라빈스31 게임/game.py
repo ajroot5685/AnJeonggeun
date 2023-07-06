@@ -32,15 +32,26 @@ def main():
     global count
     global num
 
-    input_num()
+    player=['playerA','playerB']
+    order=0
+    flag=False
 
-    for i in range(count):
-        num+=1
-        print("playerA :", num)
+    while 1:
+        if order==0:
+            nowplayer=player[0]
+        else:
+            nowplayer=player[1]
 
-    input_num()
-    for i in range(count):
-        num+=1
-        print("playerB :", num)
+        input_num()
+        for i in range(count):
+            num+=1
+            print(nowplayer,":", num)
+            if num==31:
+                flag=True
+                break
+
+        if flag:
+            break
+        order=not order
 
 main()
