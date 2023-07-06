@@ -1,3 +1,5 @@
+import random
+
 class NumError(Exception):
     def __init__(self):
         super().__init__()
@@ -32,17 +34,18 @@ def brGame():
     global count
     global num
 
-    player=['playerA','playerB']
+    player=['computer','player']
     order=0
     flag=False
 
     while 1:
         if order==0:
             nowplayer=player[0]
+            count=random.randint(1,3)
         else:
             nowplayer=player[1]
-
-        input_num()
+            input_num()
+        
         for i in range(count):
             num+=1
             print(nowplayer,":", num)
@@ -51,9 +54,13 @@ def brGame():
                 break
 
         if flag:
+            if order==0:
+                winner = player[1]
+            else:
+                winner = player[0]
             break
         order=not order
-    return nowplayer
+    return winner
 
 def main():
     winner=brGame()
