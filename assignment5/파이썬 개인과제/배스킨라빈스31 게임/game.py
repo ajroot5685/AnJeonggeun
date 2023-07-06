@@ -54,4 +54,6 @@ def main():
             break
         order=not order
 
+    print(nowplayer,'win!')
+
 main()
