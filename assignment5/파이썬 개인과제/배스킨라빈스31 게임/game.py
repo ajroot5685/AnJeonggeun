@@ -28,7 +28,7 @@ def input_num():
             continue
         break
 
-def main():
+def brGame():
     global count
     global num
 
@@ -53,7 +53,11 @@ def main():
         if flag:
             break
         order=not order
+    return nowplayer
 
-    print(nowplayer,'win!')
+def main():
+    winner=brGame()
+
+    print(winner,'win!')
 
 main()
