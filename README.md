@@ -22,3 +22,8 @@
   😀 지옥주가 지나간건가요! 앞의 과제들보다 빠르게 끝나서 좋네요!  
   querySelector를 사용하는 이유를 알 수 있었습니다.  
   ![네번째 과제](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment4.PNG>)
+
+- 다섯번째 과제 - python 코드 작성  
+  😗 문법이 익숙하진 않지만 가볍게 할 수 있었던 과제였습니다!  
+  ![다섯번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment5-1.PNG>) | ![다섯번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment5-2.PNG>)
+  ---|---|
