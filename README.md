@@ -27,3 +27,9 @@
   😗 문법이 익숙하진 않지만 가볍게 할 수 있었던 과제였습니다!  
   ![다섯번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment5-1.PNG>) | ![다섯번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment5-2.PNG>)
   ---|---|
+
+- 여섯번째 과제 - python 술게임 만들기  
+  😵 난이도는 쉬웠지만 높은 퀄리티를 위해 디자인에 혼신을 다했습니다. ~~프론트싫어~~  
+  ![여섯번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-1.PNG>)
+  ![여섯번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-2.PNG>)
+  ![여섯번째 과제-3](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-3.PNG>)
