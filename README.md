@@ -33,3 +33,7 @@
   ![여섯번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-1.PNG>)
   ![여섯번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-2.PNG>)
   ![여섯번째 과제-3](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-3.PNG>)
+
+- 일곱번째 과제 - DjangoGirls 튜토리얼 따라하기  
+  🤔 이제 진짜 시작이라는 생각이 듭니다. 새로운 지식은 언제나 낯설어요
+  ![일곱번째 과제](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment7.PNG>)
