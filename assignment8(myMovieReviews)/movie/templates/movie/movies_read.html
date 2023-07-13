@@ -1,0 +1,23 @@
+{% extends "movie/base.html" %} {% block content %}
+<div id="movie_detail">
+  <div id="detail_nav">
+    <div><h1>스파이더맨</h1></div>
+    <div><a href="">수정</a> <a href="">삭제</a></div>
+  </div>
+  <div id="detail_info">
+    <div class="detail_img">
+      <!-- <img src="static/img/test_image.jpg" alt="영화 사진" /> -->
+      <div>사진</div>
+    </div>
+    <div id="detail_info_content">
+      <div><span>개봉년도 </span>{{ movies.release_year }}년</div>
+      <div><span>감독 </span>{{ movies.director }}</div>
+      <div><span>주연 </span>{{ movies.actor }}</div>
+      <div><span>장르 </span>{{ movies.genre }}</div>
+      <div><span>별점 </span>{{ movies.star }}</div>
+      <div><span>러닝타임 </span>{{ movies.running_time }} 분</div>
+    </div>
+  </div>
+  <div id="detail_content">{{ movies.content }}</div>
+</div>
+{% endblock %}

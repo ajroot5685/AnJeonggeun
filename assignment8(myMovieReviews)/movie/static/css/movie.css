@@ -18,6 +18,11 @@ body {
   margin: 0 5px;
 }
 
+h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
 h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -87,7 +92,7 @@ main {
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 30px;
-  width: 1100px;
+  width: 80%;
   margin-top: 20px;
 }
 
@@ -120,4 +125,49 @@ main {
 #movie_list > .movie > .movie_info > span {
   color: var(--text-info-color);
   font-weight: bold;
+}
+
+#movie_detail {
+  width: 100%;
+  padding: 20px;
+}
+
+#detail_nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+#detail_info {
+  background: var(--color-light-gray);
+  display: flex;
+  border-radius: 5px;
+}
+
+#detail_info > .detail_img > div {
+  width: 120px;
+  height: 160px;
+  background: yellow;
+  margin: 10px 20px;
+}
+
+#detail_info_content {
+  height: 160px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+}
+
+#detail_info_content span {
+  color: var(--text-info-color);
+  font-weight: bold;
+}
+
+#detail_content {
+  background: var(--color-gray);
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
 }

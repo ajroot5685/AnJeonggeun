@@ -6,6 +6,11 @@ def movies_list(request, *args, **kwargs):
     movies=Movie.objects.all()
     return render(request, "movie/movies_list.html", {"movies": movies})
 
+def movies_read(request, pk, *args, **kwargs):
+    movies = Movie.objects.get(id=pk)
+
+    return render(request, "movie/movies_read.html", {"movies":movies})
+
 def movies_create(request, *args, **kwargs):
     if request.method == "POST":
         Movie.objects.create(
