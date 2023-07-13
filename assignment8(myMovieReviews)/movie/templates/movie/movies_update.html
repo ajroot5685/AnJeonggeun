@@ -1,0 +1,73 @@
+{% extends "movie/base.html" %} {% block content %}
+<div id="review">
+  <div id="review_title">
+    <h3><span class="theme_color">Movie</span> review 🍿</h3>
+  </div>
+  <hr />
+  <br />
+  <br />
+  <form action="/movies/{{movie.id}}/update" method="post">
+    {% csrf_token %}
+    <span>제목 : </span>
+    <input name="title" maxlength="30" value="{{movie.title}}" />
+    <br />
+    <span>개봉년도 : </span>
+    <input
+      name="release_year"
+      type="number"
+      min="1000"
+      max="2023"
+      value="{{movie.release_year}}"
+    />
+    <br />
+    <span>장르 : </span>
+    <select name="genre" v>
+      <option value="none">---------</option>
+      <option value="액션" {% if movie.genre == "액션" %}selected{% endif %}>액션</option>
+      <option value="범죄" {% if movie.genre == "범죄" %}selected{% endif %}>범죄</option>
+      <option value="SF" {% if movie.genre == "SF" %}selected{% endif %}>SF</option>
+      <option value="코미디" {% if movie.genre == "코미디" %}selected{% endif %}>코미디</option>
+      <option value="멜로/로맨스" {% if movie.genre == "멜로/로맨스" %}selected{% endif %}>멜로/로맨스</option>
+      <option value="스릴러" {% if movie.genre == "스릴러" %}selected{% endif %}>스릴러</option>
+      <option value="공포" {% if movie.genre == "공포" %}selected{% endif %}>공포</option>
+      <option value="드라마" {% if movie.genre == "드라마" %}selected{% endif %}>드라마</option>
+    </select>
+    <br />
+    <span>별점 : </span>
+    <input
+      name="star"
+      type="number"
+      step="0.1"
+      min="0"
+      max="5"
+      value="{{ movie.star }}"
+    />
+    <br />
+    <span>러닝타임 : </span>
+    <input
+      name="running_time"
+      type="number"
+      min="0"
+      max="1000"
+      value="{{ movie.running_time }}"
+    />
+    <br />
+    <span>리뷰 : </span>
+    <br />
+    <textarea
+      name="content"
+      cols="60"
+      rows="10"
+    >{{ movie.content }}</textarea>
+    <br />
+    <span>감독 : </span>
+    <input name="director" maxlength="30" value="{{ movie.director }}" />
+    <br />
+    <span>배우 : </span>
+    <input name="actor" maxlength="100" value="{{ movie.actor }}" />
+    <div class="savebtn">
+      <input type="submit" value="save" />
+    </div>
+  </form>
+</div>
+{% endblock %}
