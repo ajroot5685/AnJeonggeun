@@ -2,6 +2,9 @@
 
 :root {
   --color-pink: rgb(249, 54, 105);
+  --color-gray: rgb(242, 242, 242);
+  --color-light-gray: rgb(248, 248, 248);
+  --input-border-color: #a9a9a9;
 }
 
 body,
@@ -19,6 +22,15 @@ h2 {
   font-weight: bold;
 }
 
+h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.theme_color {
+  color: var(--color-pink);
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -30,6 +42,34 @@ nav > div {
   display: inline-block;
 }
 
-.theme_color {
-  color: var(--color-pink);
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#review {
+  background: var(--color-gray);
+  border-radius: 10px;
+  padding: 10px 60px;
+}
+
+#review_title {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#review > form > input,
+#review > form > textarea,
+#review > form > .savebtn > input {
+  border: 1px solid var(--input-border-color);
+}
+
+#review > form > input,
+#review > form > select,
+#review > form > textarea {
+  margin-bottom: 20px;
+}
+
+#review > form > .savebtn {
+  text-align: right;
 }

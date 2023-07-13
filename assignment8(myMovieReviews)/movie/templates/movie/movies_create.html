@@ -1,1 +1,50 @@
-hello
+{% extends "movie/base.html" %} {% block content %}
+<div id="review">
+  <div id="review_title">
+    <h3><span class="theme_color">Movie</span> review 🍿</h3>
+  </div>
+  <hr />
+  <br />
+  <br />
+  <form action="/movies/create" method="post">
+    {% csrf_token %}
+    <span>제목 : </span>
+    <input name="title" maxlength="30" />
+    <br />
+    <span>개봉년도 : </span>
+    <input name="release_year" type="number" min="1000" max="2023" />
+    <br />
+    <span>장르 : </span>
+    <select name="genre">
+      <option value="none">---------</option>
+      <option value="action">액션</option>
+      <option value="crime">범죄</option>
+      <option value="sf">SF</option>
+      <option value="comedy">코미디</option>
+      <option value="romance">멜로/로맨스</option>
+      <option value="thriller">스릴러</option>
+      <option value="fear">공포</option>
+      <option value="drama">드라마</option>
+    </select>
+    <br />
+    <span>별점 : </span>
+    <input name="star" type="number" step="0.1" min="0" max="5" />
+    <br />
+    <span>러닝타임 : </span>
+    <input name="running_time" type="number" min="0" max="1000" />
+    <br />
+    <span>리뷰 : </span>
+    <br />
+    <textarea name="content" cols="60" rows="10"></textarea>
+    <br />
+    <span>감독 : </span>
+    <input name="director" maxlength="30" />
+    <br />
+    <span>배우 : </span>
+    <input name="director" maxlength="100" />
+    <div class="savebtn">
+      <input type="submit" value="save" />
+    </div>
+  </form>
+</div>
+{% endblock %}
