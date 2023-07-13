@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myMovieReviews</title>
+    <link rel="stylesheet" href="{% static 'css/movie.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <div id="title">
+        <h2>my <span class="theme_color">Movie</span> reviews</h2>
+      </div>
+      <div id="add"><a href="/movies/create">Add a New review</a></div>
+    </nav>
+    <hr />
+
+    <main>
+      {% block content %}
+      <!-- html 코드 -->
+      {% endblock %}
+    </main>
+  </body>
+</html>

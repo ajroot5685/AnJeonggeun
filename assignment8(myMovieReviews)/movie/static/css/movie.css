@@ -1,0 +1,35 @@
+@import "reset.css";
+
+:root {
+  --color-pink: rgb(249, 54, 105);
+}
+
+body,
+html {
+  font-size: 10.5px;
+  line-height: 10.5px;
+}
+
+body {
+  margin: 0 5px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  word-spacing: -2px;
+}
+
+nav > div {
+  display: inline-block;
+}
+
+.theme_color {
+  color: var(--color-pink);
+}
