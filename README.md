@@ -37,3 +37,14 @@
 - 일곱번째 과제 - DjangoGirls 튜토리얼 따라하기  
   🤔 이제 진짜 시작이라는 생각이 듭니다. 새로운 지식은 언제나 낯설어요
   ![일곱번째 과제](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment7.PNG>)
+
+- 여덟번째 과제 - 나만의 영화 기록 사이트 만들기  
+  🙂 풀스택 웹프레임워크답게 개발 속도가 빠른 것 같습니다.(~~물론 저는 오래 걸렸습니다.~~)  
+  정적 이미지를 추가하는 것도 굉장히 힘들었지만 다음엔 이미지 업로드도 도전해보고 싶네요!
+  <details>
+    <summary>구현 이미지</summary>
+    
+    ![여덟번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment8-1.PNG>)
+    ![여덟번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment8-2.PNG>)
+    ![여덟번째 과제-3](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment8-3.PNG>)
+  </details>
