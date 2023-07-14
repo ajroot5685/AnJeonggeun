@@ -10,7 +10,7 @@
 1️⃣ 장르 선택
 
 - select 태그를 이용하여 구현하였습니다.
-  ```
+  ```django
   <select name="genre">
       <option value="none">---------</option>
       <option value="액션">액션</option>
@@ -24,16 +24,16 @@
     </select>
   ```
 - 다른 input 태그와 마찬가지로 선택된 option의 value가 문자열로 전달됩니다.
-  ```
+  ```python
     genre = models.TextField()
   ```
 
 <br/>
-2️⃣ 분 단위 입력을 시간 단위로 변환되어 출력
+2️⃣ 분 단위 입력을 시간 단위로 변환하여 출력
 
 - view 의 각 함수에서 변환하여 템플릿에 데이터를 전달하는 방식으로 구현하였습니다.
 
-  ```
+  ```python
   def movies_read(request, pk, \*args, \*\*kwargs):
     movie = Movie.objects.get(id=pk)
 
@@ -51,7 +51,7 @@
 
 - POST 형식으로 form 에서 데이터를 받아왔습니다.
 
-  ```
+  ```django
   <div id="movie_order">
     <h3>정렬 기준 선택 :</h3>
     <form action="/" method="post">
@@ -79,7 +79,7 @@
 
 - 정렬 기준에 따라 order_by() 로 정렬하였습니다.
 
-  ```
+  ```python
   def movies_list(request, *args, **kwargs):
     sort=""
 
@@ -111,7 +111,7 @@
 
 - model이 create() 될 때 자동으로 save() 가 호출되는 것을 이용하였습니다.
 
-  ```
+  ```python
   class Movie(models.Model):
     .
     .
@@ -132,7 +132,7 @@
 - static/image에 정적 이미지들을 번호를 매겨 저장하였습니다. (image0, image1, ...)  
   ![](readme_img.png)
 - html 에서 이미지의 경로에 이미지의 번호를 model 변수로부터 가져와서 지정하였습니다.
-  ```
+  ```django
   <img
       src="{% static 'image/image' %}{{movie.image}}.jpg"
       alt="영화 사진" />
