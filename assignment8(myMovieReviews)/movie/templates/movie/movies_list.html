@@ -1,9 +1,31 @@
-{% extends "movie/base.html" %} {% block content %}
+{% extends "movie/base.html" %} {% load static %} {% block content %}
+<div id="movie_order">
+  <h3>정렬 기준 선택 :</h3>
+  <form action="/" method="post">
+    {% csrf_token %}
+    <div>
+      <input type="radio" name="direction" id="up" value="오름차순" checked />
+      <label for="up">오름차순</label>
+      <input type="radio" name="direction" id="down" value="내림차순" />
+      <label for="down">내림차순</label>
+    </div>
+
+    <div>
+      <input type="submit" name="order" value="영화제목 순" />
+      <input type="submit" name="order" value="개봉년도 순" />
+      <input type="submit" name="order" value="별점 순" />
+      <input type="submit" name="order" value="러닝타임 순" />
+    </div>
+  </form>
+</div>
 <div id="movie_list">
   {% for movie in movies %}
   <div class="movie">
     <div class="movie_img">
-      <img src="static/img/test_image.jpg" alt="영화 사진" />
+      <img
+        src="{% static 'image/image' %}{{movie.image}}.jpg"
+        alt="영화 사진"
+      />
     </div>
     <h2><a href="/movies/{{movie.pk}}">{{movie.title}}</a></h2>
     <div class="movie_info"><span>개봉년도 </span>{{movie.release_year}}</div>

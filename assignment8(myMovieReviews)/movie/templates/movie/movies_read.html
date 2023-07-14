@@ -1,4 +1,4 @@
-{% extends "movie/base.html" %} {% block content %}
+{% extends "movie/base.html" %} {% load static %} {% block content %}
 <div id="movie_detail">
   <div id="detail_nav">
     <div><h1>{{ movie.title }}</h1></div>
@@ -9,8 +9,11 @@
   </div>
   <div id="detail_info">
     <div class="detail_img">
-      <!-- <img src="static/img/test_image.jpg" alt="영화 사진" /> -->
-      <div>사진</div>
+      <img
+        src="{% static 'image/image' %}{{movie.image}}.jpg"
+        alt="영화 사진"
+      />
+      <!-- <div>사진</div> -->
     </div>
     <div id="detail_info_content">
       <div><span>개봉년도 </span>{{ movie.release_year }}년</div>
@@ -18,9 +21,9 @@
       <div><span>주연 </span>{{ movie.actor }}</div>
       <div><span>장르 </span>{{ movie.genre }}</div>
       <div><span>별점 </span>{{ movie.star }}</div>
-      <div><span>러닝타임 </span>{{ movie.running_time }} 분</div>
+      <div><span>러닝타임 </span>{{ movie_rt }}</div>
     </div>
   </div>
-  <div id="detail_content">{{ movie.content }}</div>
+  <div id="detail_content"><p>{{ movie.content }}</p></div>
 </div>
 {% endblock %}

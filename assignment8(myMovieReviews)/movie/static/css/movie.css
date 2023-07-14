@@ -55,7 +55,9 @@ nav > div {
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #review {
@@ -87,13 +89,49 @@ main {
   text-align: right;
 }
 
+#movie_order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: 20px;
+}
+
+#movie_order > form {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+[type="radio"] {
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: middle;
+}
+
+[type="radio"]:checked {
+  border: 0.3em solid tomato;
+}
+
+#movie_order > form label {
+  vertical-align: middle;
+}
+
+#movie_order [type="submit"] {
+  border: 1px solid gray;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
 #movie_list {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 30px;
   width: 80%;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 #movie_list > .movie {
@@ -144,11 +182,11 @@ main {
   border-radius: 5px;
 }
 
-#detail_info > .detail_img > div {
+#detail_info > .detail_img > img {
   width: 120px;
   height: 160px;
-  background: yellow;
   margin: 10px 20px;
+  object-fit: cover;
 }
 
 #detail_info_content {
@@ -170,4 +208,5 @@ main {
   margin-top: 20px;
   padding: 15px;
   border-radius: 5px;
+  line-height: 1.5rem;
 }
