@@ -48,3 +48,7 @@
     ![여덟번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment8-2.PNG>)
     ![여덟번째 과제-3](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment8-3.PNG>)
   </details>
+
+- 아홉번째 과제 - SellingCommunity ERD 설계  
+  😰 개발자가 고생하면 사용자가 편하고, 엔티티 설계에 고생하면 개발에 편하고...
+  ![아홉번째 과제](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment9.PNG>)
