@@ -30,13 +30,20 @@
     {% else %}
     <img src="{% static 'posts/image/no_img.png' %}" alt="대체 텍스트" />
     {% endif %}
-    <p>작성자: {{post.user}}</p>
+    <p>작성자: {{post.user.name}}</p>
+    <p>나이: {{post.user.age}}</p>
     <p>지역: {{post.region}}</p>
     <p>가격: {{post.price}}</p>
     <h2 class="my-3">{{post.content}}</h2>
     <p>작성일: {{post.created_date}}</p>
     <p>수정일: {{post.updated_date}}</p>
     <p>이 작성자의 글</p>
+
+    {% for rel_post in related_posts %}
+    <a href="{% url 'posts:detail' rel_post.pk %}" class="btn btn-success"
+      >{{rel_post.title}}</a
+    >
+    {% endfor %}
 
     <hr />
     <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary"

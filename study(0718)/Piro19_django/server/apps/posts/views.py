@@ -32,7 +32,12 @@ def create(request):
 
 def detail(request, pk):
   target_post = Post.objects.get(id = pk)
-  ctx = {'post' : target_post,}
+  # 역참조
+  # post>user>posts
+  user=target_post.user
+  related_posts = user.post_set.all()
+  ctx = {'post' : target_post,
+         'related_posts' : related_posts,}
   return render(request, 'posts/post_detail.html', context=ctx)
   
   
