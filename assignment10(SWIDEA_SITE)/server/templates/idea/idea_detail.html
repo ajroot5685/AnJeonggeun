@@ -1,0 +1,37 @@
+{% extends "idea/base.html" %}{% load static %} {% block content %}
+<div id="detail">
+  <div id="detail_title">
+    <h2 class="theme_color">Idea Detail</h2>
+    <p>
+      아이디어 세부내용 페이지 입니다. 당신이 구현하려 한 아이디어들을 자세히
+      살펴보세요.
+    </p>
+  </div>
+  <div id="detail_info">
+    <img src="{% static 'idea/image' %}/background-img.jpg" alt="사진" />
+    <div id="detail_content">
+      <h1>두 번째 게시물</h1>
+      <p>
+        1) 아이디어 관심도
+        <br />
+        5
+        <br />
+        <br />
+        2) 예상 개발 툴
+        <br />
+        <span>django</span>
+        <br />
+        <br />
+        3) 아이디어 설명
+        <br />
+        두 번째 아이디어입니다.
+      </p>
+    </div>
+  </div>
+  <div id="detail_action">
+    <button class="btn btn-danger btn-lg">삭제</button>
+    <button class="btn btn-light btn-lg">목록</button>
+    <button class="btn btn-primary btn-lg">수정</button>
+  </div>
+</div>
+{% endblock %}

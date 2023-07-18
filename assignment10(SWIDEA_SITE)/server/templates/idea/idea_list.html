@@ -1,1 +1,59 @@
-hello
+{% extends "idea/base.html" %}{% load static %} {% block content %}
+<div id="list">
+  <div id="list_title">
+    <h2 class="theme_color">Idea List</h2>
+    <p>나의 아이디어를 잊지 말고 기록해보세요</p>
+  </div>
+  <div id="list_order">
+    <form action="/ideas/list" method="post">
+      {% csrf_token %}
+      <select name="order">
+        <option value="none">--정렬기준--</option>
+        <option value="찜하기순">찜하기순</option>
+        <option value="등록순">등록순</option>
+        <option value="최신순">최신순</option>
+        <option value="이름순">이름순</option>
+      </select>
+    </form>
+  </div>
+  <div id="list_item">
+    <div class="idea">
+      <div class="idea_img">
+        <img src="{% static 'idea/image' %}/background-img.jpg" alt="사진" />
+      </div>
+      <p class="bold"><a href="#">첫 번째 게시물</a></p>
+      <hr />
+      <p>예상 개발 툴 : django</p>
+      <p>아이디어 관심도 : +<span> 4 </span>-</p>
+    </div>
+    <div class="idea">
+      <div class="idea_img">
+        <img src="{% static 'idea/image' %}/background-img.jpg" alt="사진" />
+      </div>
+      <p class="bold"><a href="#">첫 번째 게시물</a></p>
+      <hr />
+      <p>예상 개발 툴 : django</p>
+      <p>아이디어 관심도 : +<span> 4 </span>-</p>
+    </div>
+    <div class="idea">
+      <div class="idea_img">
+        <img src="{% static 'idea/image' %}/background-img.jpg" alt="사진" />
+      </div>
+      <p class="bold"><a href="#">첫 번째 게시물</a></p>
+      <hr />
+      <p>예상 개발 툴 : django</p>
+      <p>아이디어 관심도 : +<span> 4 </span>-</p>
+    </div>
+    <div class="idea">
+      <div class="idea_img">
+        <img src="{% static 'idea/image' %}/background-img.jpg" alt="사진" />
+      </div>
+      <p class="bold"><a href="#">첫 번째 게시물</a></p>
+      <hr />
+      <p>예상 개발 툴 : django</p>
+      <p>아이디어 관심도 : +<span> 4 </span>-</p>
+    </div>
+  </div>
+  <div id="list_page">1 2</div>
+</div>
+{% endblock %}

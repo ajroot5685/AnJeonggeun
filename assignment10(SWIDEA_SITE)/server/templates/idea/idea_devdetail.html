@@ -1,0 +1,30 @@
+{% extends "idea/base.html" %}{% load static %} {% block content %}
+<div id="devdetail">
+  <div id="devdetail_title">
+    <h2 class="theme_color">DevTool Detail</h2>
+    <p>
+      아이디어 세부내용 페이지 입니다. 당신이 구현하려 한 아이디어들을 자세히
+      살펴보세요.
+    </p>
+  </div>
+  <div id="devdetail_info">
+    <div><h1>django</h1></div>
+
+    <div class="border-left">
+      <p>웹 프레임워크</p>
+      <p>django는 python을 이용한 웹 프레임워크입니다.</p>
+    </div>
+    <hr />
+    <div><h3>> 만들 수 있는 SW 목록</h3></div>
+    <div>
+      <p>첫번째 게시물</p>
+      <p>두번째 게시물</p>
+    </div>
+  </div>
+  <div id="devdetail_action">
+    <button class="btn btn-danger btn-lg">삭제</button>
+    <button class="btn btn-light btn-lg">목록</button>
+    <button class="btn btn-primary btn-lg">수정</button>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "idea/base.html" %}{% load static %} {% block content %}
+
+<div id="register">
+  <div id="register_title">
+    <h2 class="theme_color">Idea Register</h2>
+    <p>아이디어 등록 페이지 입니다. 당신의 아이디어를 잊지 말고 기록하세요!</p>
+  </div>
+  <form action="/ideas/create" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <span>아이디어명 : </span>
+    <br />
+    <input name="title" maxlength="30" />
+    <br />
+    <br />
+    <span>Image : </span>
+    <br />
+    <input type="file" name="imgfile" id="imgfile" />
+    <br />
+    <br />
+    <span>아이디어 설명 : </span>
+    <br />
+    <textarea name="content" cols="60" rows="10"></textarea>
+    <br />
+    <br />
+    <span>아이디어 관심도 : </span>
+    <br />
+    <input name="interest" type="number" min="0" max="10" />
+    <br />
+    <br />
+    <span>예상 개발툴 : </span>
+    <br />
+    <select name="devtool">
+      <option value="none">---------</option>
+      <option value="액션">액션</option>
+      <option value="범죄">범죄</option>
+      <option value="SF">SF</option>
+      <option value="코미디">코미디</option>
+      <option value="멜로/로맨스">멜로/로맨스</option>
+      <option value="스릴러">스릴러</option>
+      <option value="공포">공포</option>
+      <option value="드라마">드라마</option>
+    </select>
+    <br />
+    <br />
+    <div class="submit-box">
+      <input type="submit" value="SUBMIT" class="submit" />
+    </div>
+  </form>
+</div>
+
+{% endblock%}

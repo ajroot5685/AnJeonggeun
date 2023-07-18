@@ -1,0 +1,31 @@
+{% extends "idea/base.html" %}{% load static %} {% block content %}
+<div id="devregister">
+  <div id="devregister_title">
+    <h2 class="theme_color">DevTool Register</h2>
+    <p>
+      개발툴 등록 페이지 입니다. 자신이 다룰 수 있는 개발툴을 등록해 보세요.
+    </p>
+  </div>
+  <form action="/ideas/create" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <span>이름 : </span>
+    <br />
+    <input name="title" maxlength="30" />
+    <br />
+    <br />
+    <span>종류 : </span>
+    <br />
+    <input name="type" maxlength="40" />
+    <br />
+    <br />
+    <span>개발툴 설명 : </span>
+    <br />
+    <textarea name="content" cols="60" rows="10"></textarea>
+    <br />
+    <br />
+    <div class="submit-box">
+      <input type="submit" value="SUBMIT" class="submit" />
+    </div>
+  </form>
+</div>
+{% endblock %}
