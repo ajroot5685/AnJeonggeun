@@ -1,0 +1,29 @@
+{% extends 'posts/base.html' %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%block head %}
+    <title>post_detail</title>
+    <style>
+      main {
+        height: 100vh;
+        padding: 40px;
+      }
+    </style>
+    {%endblock%}
+  </head>
+  <body>
+    {%block content%}
+    <form
+      action="/posts/update/{{pk}}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      {%csrf_token%} {{form.as_p}}
+      <button class="btn btn-primary">수정 완료</button>
+    </form>
+    {%endblock%}
+  </body>
+</html>

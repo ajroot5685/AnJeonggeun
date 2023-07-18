@@ -1,0 +1,79 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%block head%}
+    <title>피망 마켓</title>
+  {%endblock%}
+</head>
+<body>
+{%block content%}
+  <div class="search-box">    
+    <form action="/">      
+      <!-- <input class = 'form-control' type="input" name="search_txt" placeholder="검색어를 입력하세요" /> -->
+      <input class = 'form-control' type="text" name="min_price" placeholder="최소 가격" />
+      <input class = 'form-control mx-2' type="text" name="max_price" placeholder="최대 가격" />
+      <input class = 'btn btn-outline-success mx-2' type="submit" value="검색" />      
+    </form>
+    <a href="{% url 'posts:create' %}" class = 'btn btn-secondary'>글 생성하러 가기</a>
+  </div>
+
+  <div class="content-wrapper">
+    <hr />
+    <!-- <div class="item">
+      <img src="{% static 'posts/image/test_img.jpeg' %}" alt="테스트 이미지" />
+      <div class="info">
+        <a class="title" href="#">가방 사세요</a>
+        <p class="region">지역: 우리 집</p>
+        <p class="price">가격: 3000</p>
+        <p class="create-date">작성일: 2023년 07월 17일</p>
+      </div>
+    </div>
+    <hr />
+    <div class="item">
+      <img src="{% static 'posts/image/test_img2.jpeg' %}" alt="테스트 이미지" />
+      <div class="info">
+        <a class="title" href="#">신발 팔아요</a>
+        <p class="region">지역: 옆 집</p>
+        <p class="price">가격: 2000</p>
+        <p class="create-date">작성일: 2023년 07월 17일</p>
+      </div>
+    </div>
+    <hr />
+    <div class="item">
+      <img src="{% static 'posts/image/test_img3.jpeg' %}" alt="테스트 이미지" />
+      <div class="info">
+        <a class="title" href="#">선글라스 살사람</a>
+        <p class="region">지역: 용산</p>
+        <p class="price">가격: 4000</p>
+        <p class="create-date">작성일: 2023년 07월 18일</p>
+      </div>
+    </div>
+    <hr /> -->
+    {% for post in posts %}
+    <div class="item">      
+      {% if post.photo != null and post.photo.url != "" %}
+        <img src="{{ post.photo.url }}" alt="대체 텍스트" />     
+      {% else %}
+        <img src="{% static 'posts/image/no_img.png' %}" alt="대체 텍스트" />     
+      {% endif %}
+      <div class="info">
+        <a class="title" href="{% url 'posts:detail' post.pk %}"
+          >{{post.title}}</a
+        >
+        <p class="region">지역: {{post.region}}</p>
+        <p class="price">가격: {{post.price}}</p>
+        <p class="create-date">작성일: {{post.create_date}}</p>
+      </div>
+    </div>
+    <hr />
+    {% endfor %}
+  </div>
+</main>
+{%endblock%}
+</body>
+</html>
