@@ -85,7 +85,7 @@ def idea_create(request):
     if request.method == "POST":
         if request.FILES.get('image'):
             tmpimage=request.FILES['image']
-            Idea.objects.create(
+            idea=Idea.objects.create(
                 title=request.POST["title"],
                 image=tmpimage,
                 content=request.POST["content"],
@@ -93,14 +93,14 @@ def idea_create(request):
                 devtool=Devtool.objects.get(name=request.POST["devtool"]),
             )
         else:
-            Idea.objects.create(
+            idea=Idea.objects.create(
                 title=request.POST["title"],
                 content=request.POST["content"],
                 interest=request.POST["interest"],
                 devtool=Devtool.objects.get(name=request.POST["devtool"]),
             )
-
-        return redirect("/")
+        idea_pk=str(idea.pk)
+        return redirect("/ideas/"+idea_pk)
     
     devtools = Devtool.objects.all()
 
@@ -191,12 +191,13 @@ def idea_devlist(request):
 def idea_devregister(request):
 
     if request.method == "POST":
-        Devtool.objects.create(
+        devtool = Devtool.objects.create(
             name=request.POST["name"],
             kind=request.POST["kind"],
             content=request.POST["content"],
         )
-        return redirect("/ideas/devtool/list")
+        devtool_pk=str(devtool.pk)
+        return redirect("/ideas/devtool/"+devtool_pk)
 
     return render(request, 'idea/idea_devregister.html')
 
@@ -219,7 +220,7 @@ def idea_devdelete(request, pk):
 
     devtool.delete()
 
-    return redirect("/")
+    return redirect("/ideas/devtool/list")
 
 def idea_devupdate(request, pk):
     
