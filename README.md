@@ -52,3 +52,16 @@
 - 아홉번째 과제 - SellingCommunity ERD 설계  
   😰 개발자가 고생하면 사용자가 편하고, 엔티티 설계에 고생하면 개발에 편하고...
   ![아홉번째 과제](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment9.PNG>)
+
+- 열번째 과제 - SW IDEA 사이트 만들기  
+  ☠ 교육팀장님 피셜 가장 어려웠다는 과제...네 어렵네요  
+  이미지 업로드 기능, ajax 무작정 사용하기, 페이지네이션 등.. 하루종일 붙들고 있었던 과제였습니다ㅜㅜ
+  <details>
+    <summary>구현 이미지</summary>
+    
+    ![열번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-1.PNG>)
+    ![열번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-2.PNG>)
+    ![열번째 과제-3](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-3.PNG>)
+    ![열번째 과제-4](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-4.PNG>)
+    ![열번째 과제-5](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-5.PNG>)
+  </details>
