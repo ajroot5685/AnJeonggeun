@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Idea, Devtool
+from .models import Idea, Devtool, IdeaStar
 
 def idea_list(request):
     sort=""
@@ -21,8 +21,11 @@ def idea_list(request):
     else:
         ideas=Idea.objects.all()
 
+    ideastars=IdeaStar.objects.all()
+
     ctx = {
         'ideas': ideas,
+        'ideastars': ideastars,
     }
     return render(request, 'idea/idea_list.html', context=ctx)
 
@@ -48,16 +51,6 @@ def idea_create(request):
 
         return redirect("/")
     
-#     if request.method == 'GET':
-    #     form = PostForm()
-    #     ctx = {'form': form}
-    #     return render(request, 'posts/post_create.html', context = ctx)    
-    #   else:
-    #     form = PostForm(request.POST, request.FILES)
-    #     if form.is_valid():
-    #       form.save()      
-    #     return redirect('/')
-
     devtools = Devtool.objects.all()
 
     ctx={
@@ -71,12 +64,51 @@ def idea_detail(request, pk):
 
     devtool = idea.devtool
 
+    ideastars = IdeaStar.objects.all()
+
     ctx={
         'idea': idea,
         'devtool' : devtool,
+        'ideastars' : ideastars,
     }
 
     return render(request, 'idea/idea_detail.html', context=ctx)
+
+def idea_delete(request, pk):
+    idea = Idea.objects.get(id=pk)
+
+    idea.delete()
+
+    return redirect("/")
+
+def idea_update(request, pk):
+    
+    idea = Idea.objects.get(id=pk)
+
+    if request.method == "POST":
+        idea.title=request.POST["title"]
+        idea.content=request.POST["content"]
+        idea.interest=request.POST["interest"]
+        idea.devtool=Devtool.objects.get(name=request.POST["devtool"])
+
+        if request.FILES.get('image'):
+            tmpimage=request.FILES['image']
+            idea.image=tmpimage
+            
+        elif request.POST.get('clear') != None:
+            idea.image=None
+        idea.save()
+            
+        return redirect(f"/ideas/{idea.pk}")
+    
+    devtools = Devtool.objects.all()
+
+    ctx={
+        'idea':idea,
+        'devtools': devtools,
+    }
+
+    return render(request, "idea/idea_update.html", context=ctx)
 
 def idea_devlist(request):
 
@@ -112,3 +144,30 @@ def idea_devdetail(request, pk):
     }
 
     return render(request, 'idea/idea_devdetail.html', context=ctx)
+
+def idea_devdelete(request, pk):
+
+    devtool = Devtool.objects.get(id=pk)
+
+    devtool.delete()
+
+    return redirect("/")
+
+def idea_devupdate(request, pk):
+    
+    devtool = Devtool.objects.get(id=pk)
+
+
+    if request.method == "POST":
+        devtool.name=request.POST["name"]
+        devtool.kind=request.POST["kind"]
+        devtool.content=request.POST["content"]
+        devtool.save()
+            
+        return redirect(f"/ideas/devtool/{devtool.pk}")
+
+    ctx={
+        'devtool':devtool,
+    }
+
+    return render(request, "idea/idea_devupdate.html", context=ctx)

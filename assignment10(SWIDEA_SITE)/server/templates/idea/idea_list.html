@@ -19,6 +19,11 @@
   <div id="list_item">
     {% for idea in ideas %}
     <div class="idea">
+      {% if idea.ideastars_set.exists %}
+      <div class="star"><a href="/">★</a></div>
+      {% else %}
+      <div class="star"><a href="/">☆</a></div>
+      {% endif %}
       <div class="idea_img">
         {% if idea.image != null and idea.image.url != "" %}
         <img src="{{ idea.image.url }}" alt="대체 텍스트" />

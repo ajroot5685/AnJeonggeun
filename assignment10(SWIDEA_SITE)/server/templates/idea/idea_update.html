@@ -1,0 +1,71 @@
+{% extends "idea/base.html" %}{% load static %} {% block content %}
+
+<div id="register">
+  <div id="register_title">
+    <h2 class="theme_color">Idea Detail Update</h2>
+    <p>
+      아이디어 세부내용 수정 페이지 입니다. 아이디어를 구체화하거나 내용을
+      변경해 보아요.
+    </p>
+  </div>
+  <form
+    action="/ideas/{{ idea.pk }}/update"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <span>아이디어명 : </span>
+    <br />
+    <input name="title" maxlength="30" value="{{ idea.title }}" required />
+    <br />
+    <br />
+    <span>Image : </span>
+    <br />
+    <span>Currently : </span>
+    {% if idea.image %} {{ idea.image }} 
+    {% else %} image doesn't exist.
+    {% endif %}
+    <input type="checkbox" name="clear"><span> Clear</span>
+    <br />
+    <span>Change : </span>
+    <input type="file" name="image" id="image" />
+    <br />
+    <br />
+    <span>아이디어 설명 : </span>
+    <br />
+    <textarea name="content" cols="60" rows="10" required>
+{{ idea.content }}</textarea
+    >
+    <br />
+    <br />
+    <span>아이디어 관심도 : </span>
+    <br />
+    <input
+      name="interest"
+      type="number"
+      min="0"
+      max="10"
+      value="{{ idea.interest }}"
+      required
+    />
+    <br />
+    <br />
+    <span>예상 개발툴 : </span>
+    <br />
+    <select name="devtool" required>
+      <option value="none" disabled>---------</option>
+      {% for devtool in devtools %} {% if idea.devtool == devtool %}
+      <option value="{{devtool.name}}" selected>{{ devtool.name }}</option>
+      {% else %}
+      <option value="{{devtool.name}}">{{ devtool.name }}</option>
+      {% endif %} {% endfor %}
+    </select>
+    <br />
+    <br />
+    <div class="submit-box">
+      <input type="submit" value="SUBMIT" class="submit" />
+    </div>
+  </form>
+</div>
+
+{% endblock%}

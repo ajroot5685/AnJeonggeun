@@ -23,9 +23,9 @@
     </div>
   </div>
   <div id="devdetail_action">
-    <button class="btn btn-danger btn-lg">삭제</button>
-    <button class="btn btn-light btn-lg">목록</button>
-    <button class="btn btn-primary btn-lg">수정</button>
+    <a href="/ideas/devtool/{{devtool.pk}}/delete" class="btn btn-danger btn-lg">삭제</a>
+    <a href="/ideas/devtool/list" class="btn btn-light btn-lg">목록</a>
+    <a href="/ideas/devtool/{{devtool.pk}}/update" class="btn btn-primary btn-lg">수정</a>
   </div>
 </div>
 {% endblock %}
