@@ -8,17 +8,18 @@
     </p>
   </div>
   <div id="devdetail_info">
-    <div><h1>django</h1></div>
+    <div><h1>{{ devtool.name }}</h1></div>
 
     <div class="border-left">
-      <p>웹 프레임워크</p>
-      <p>django는 python을 이용한 웹 프레임워크입니다.</p>
+      <p>{{ devtool.kind }}</p>
+      <p>{{ devtool.content }}</p>
     </div>
     <hr />
     <div><h3>> 만들 수 있는 SW 목록</h3></div>
     <div>
-      <p>첫번째 게시물</p>
-      <p>두번째 게시물</p>
+      {% for idea in related_ideas %}
+      <p><a href="/ideas/{{ idea.pk }}">{{ idea.title }}</a></p>
+      {% endfor %}
     </div>
   </div>
   <div id="devdetail_action">

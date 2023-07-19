@@ -8,23 +8,29 @@
     </p>
   </div>
   <div id="detail_info">
-    <img src="{% static 'idea/image' %}/background-img.jpg" alt="사진" />
+    {% if idea.image != null and idea.image.url != "" %}
+    <img src="{{ idea.image.url }}" alt="대체 텍스트" />
+    {% else %}
+    <img src="{% static 'idea/image/no_img.png' %}" alt="대체 텍스트" />
+    {% endif %}
     <div id="detail_content">
-      <h1>두 번째 게시물</h1>
+      <h1>{{ idea.title }}</h1>
       <p>
         1) 아이디어 관심도
         <br />
-        5
+        {{ idea.interest }}
         <br />
         <br />
         2) 예상 개발 툴
         <br />
-        <span>django</span>
+        <span
+          ><a href="/ideas/devtool/{{devtool.pk}}">{{ idea.devtool }}</a></span
+        >
         <br />
         <br />
         3) 아이디어 설명
         <br />
-        두 번째 아이디어입니다.
+        {{ idea.content }}
       </p>
     </div>
   </div>

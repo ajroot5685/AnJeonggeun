@@ -140,7 +140,7 @@ main {
 
 #register_title p,
 #register span,
-#register input {
+input[type="file"] {
   color: white;
 }
 

@@ -9,54 +9,16 @@
   </div>
   <div id="devlist_content">
     <hr />
+    {% for devtool in devtools %}
     <div class="devlist_item">
-      <div class="devlist_item_title">django</div>
-      <div class="devlist_item_type">웹 프레임워크</div>
-      <div class="devlist_item_description">
-        django는 python을 이용한 웹 프레임워크입니다.
+      <div class="devlist_item_title">
+        <a href="/ideas/devtool/{{devtool.pk}}">{{ devtool.name }}</a>
       </div>
+      <div class="devlist_item_type">{{ devtool.kind }}</div>
+      <div class="devlist_item_description">{{ devtool.content }}</div>
     </div>
     <hr />
-    <div class="devlist_item">
-      <div class="devlist_item_title">django</div>
-      <div class="devlist_item_type">웹 프레임워크</div>
-      <div class="devlist_item_description">
-        django는 python을 이용한 웹 프레임워크입니다.
-      </div>
-    </div>
-    <hr />
-    <div class="devlist_item">
-      <div class="devlist_item_title">django</div>
-      <div class="devlist_item_type">웹 프레임워크</div>
-      <div class="devlist_item_description">
-        django는 python을 이용한 웹 프레임워크입니다.
-      </div>
-    </div>
-    <hr />
-    <div class="devlist_item">
-      <div class="devlist_item_title">django</div>
-      <div class="devlist_item_type">웹 프레임워크</div>
-      <div class="devlist_item_description">
-        django는 python을 이용한 웹 프레임워크입니다.
-      </div>
-    </div>
-    <hr />
-    <div class="devlist_item">
-      <div class="devlist_item_title">django</div>
-      <div class="devlist_item_type">웹 프레임워크</div>
-      <div class="devlist_item_description">
-        django는 python을 이용한 웹 프레임워크입니다.
-      </div>
-    </div>
-    <hr />
-    <div class="devlist_item">
-      <div class="devlist_item_title">django</div>
-      <div class="devlist_item_type">웹 프레임워크</div>
-      <div class="devlist_item_description">
-        django는 python을 이용한 웹 프레임워크입니다.
-      </div>
-    </div>
-    <hr />
+    {% endfor %}
   </div>
   <div id="devlist_footer">1</div>
 </div>

@@ -6,21 +6,25 @@
       개발툴 등록 페이지 입니다. 자신이 다룰 수 있는 개발툴을 등록해 보세요.
     </p>
   </div>
-  <form action="/ideas/create" method="post" enctype="multipart/form-data">
+  <form
+    action="/ideas/devtool/register"
+    method="post"
+    enctype="multipart/form-data"
+  >
     {% csrf_token %}
     <span>이름 : </span>
     <br />
-    <input name="title" maxlength="30" />
+    <input name="name" maxlength="30" required />
     <br />
     <br />
     <span>종류 : </span>
     <br />
-    <input name="type" maxlength="40" />
+    <input name="kind" maxlength="40" required />
     <br />
     <br />
     <span>개발툴 설명 : </span>
     <br />
-    <textarea name="content" cols="60" rows="10"></textarea>
+    <textarea name="content" cols="60" rows="10" required></textarea>
     <br />
     <br />
     <div class="submit-box">
