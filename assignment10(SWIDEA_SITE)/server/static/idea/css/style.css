@@ -117,6 +117,7 @@ main {
 .star {
   color: var(--color-yellow);
   display: inline-block;
+
 }
 
 .idea hr {
@@ -137,6 +138,23 @@ main {
 #list_page {
   text-align: center;
   color: white;
+}
+
+#list_page > ul{
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  gap: 20px;
+  
+}
+
+.page{
+  color: white;
+  font-weight: bold;
+}
+
+.pagenow{
+  color: red !important;
 }
 
 #register {
@@ -261,6 +279,12 @@ input[type="file"] {
 .devlist_item_type {
   font-size: 1.4rem;
   color: white;
+}
+
+.devlist_item_description{
+  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #devlist_footer {

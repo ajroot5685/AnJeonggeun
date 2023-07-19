@@ -17,10 +17,10 @@
     </form>
   </div>
   <div id="list_item">
-    {% for idea in ideas %}
+    {% for idea in page_obj %}
     <div class="idea">
       {% csrf_token %}
-      <div class="star"><button id="star_value" class="star" onclick="updateStar('{{idea.pk}}','/')">
+      <div class="star"><button id="star_value{{idea.pk}}" class="star" onclick="updateStar('{{idea.pk}}','/')">
         {% if idea.ideastar_set.exists %}★
         {% else %}☆
         {% endif %}</button></div>
@@ -35,10 +35,29 @@
       <p class="bold"><a href="/ideas/{{idea.pk}}">{{ idea.title }}</a></p>
       <hr />
       <p>예상 개발 툴 : {{ idea.devtool }}</p>
-      <p>아이디어 관심도 : <button class="interest_ajax_btn" onclick="updateInterest('{{idea.pk}}', 'increase')">+</button><span id="interest_value">{{ idea.interest }}</span>
+      <p>아이디어 관심도 : <button class="interest_ajax_btn" onclick="updateInterest('{{idea.pk}}', 'increase')">+</button><span id="interest_value{{idea.pk}}">{{ idea.interest }}</span>
         <button class="interest_ajax_btn" onclick="updateInterest('{{idea.pk}}', 'decrease')">-</button></p>
     </div>
     {% endfor %}
   </div>
-  <div id="list_page">1 2</div> 
+  <div id="list_page">
+    <ul>
+      {% if page_obj.has_previous %}
+      <li><a href="?page={{page_obj.previous_page_number}}" class="page">&#10094;</a></li>
+      {% endif %}
+
+    {% for page in paginator.page_range %}
+    {% if page == page_obj.number %}
+      <li><a href="?page={{page}}" class="page pagenow">{{page}}</a></li>
+      {% else %}
+      <li><a href="?page={{page}}" class="page">{{page}}</a></li>
+
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <li><a href="?page={{page_obj.next_page_number}}" class="page">&#10095;</a></li>
+      {% endif %}
+  </ul>
+  </div> 
 {% endblock %}

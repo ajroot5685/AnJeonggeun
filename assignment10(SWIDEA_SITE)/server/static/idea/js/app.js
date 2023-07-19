@@ -16,7 +16,7 @@ function updateInterest(ideaId, action){
         },
         success: function(data) {
           // 서버에서 새로운 관심도 값을 받아서 업데이트
-          $("#interest_value").text(data.new_interest);
+          $("#interest_value"+ideaId).text(data.new_interest);
         },
         error: function(xhr, textStatus, errorThrown) {
           console.error("Error updating interest:", textStatus, errorThrown);
@@ -37,7 +37,7 @@ function updateStar(ideaId, url){
         },
         success: function(data) {
           // 서버에서 새로운 관심도 값을 받아서 업데이트
-          $("#star_value").text(data.star);
+          $("#star_value"+ideaId).text(data.star);
         },
         error: function(xhr, textStatus, errorThrown) {
           console.error("Error updating interest:", textStatus, errorThrown);

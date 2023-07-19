@@ -3,6 +3,8 @@ from .models import Idea, Devtool, IdeaStar
 
 from django.http import JsonResponse
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH')=='XMLHttpRequest'
 
@@ -39,12 +41,14 @@ def idea_list(request):
 
 
     sort=""
+    ideastars=IdeaStar.objects.all()
 
     if request.method == "POST":
         idea_order=request.POST["order"]
         if idea_order=="찜하기순":
-            sort=""
-            # 수정 필요
+            ideas_isstar=Idea.objects.filter(ideastar__isnull=False)
+            ideas_isnotstar=Idea.objects.filter(ideastar__isnull=True)
+            sort="!"
         elif idea_order=="등록순":
             sort="created_at"
         elif idea_order=="최신순":
@@ -52,16 +56,27 @@ def idea_list(request):
         elif idea_order=="이름순":
             sort="title"
 
-    if sort!="":
+    if sort=="!":
+        ideas=list(ideas_isstar)+list(ideas_isnotstar)
+    elif sort!="":
         ideas=Idea.objects.all().order_by(sort)
     else:
         ideas=Idea.objects.all()
 
-    ideastars=IdeaStar.objects.all()
+    page=request.GET.get('page')
+    paginator = Paginator(ideas, 4)
+    try:
+        page_obj=paginator.page(page)
+    except PageNotAnInteger:
+        page_obj=paginator.page(1)
+    except EmptyPage:
+        page_obj=paginator.page(1)
 
     ctx = {
         'ideas': ideas,
         'ideastars': ideastars,
+        'page_obj': page_obj,
+        'paginator': paginator,
     }
     return render(request, 'idea/idea_list.html', context=ctx)
 
@@ -181,7 +196,7 @@ def idea_devregister(request):
             kind=request.POST["kind"],
             content=request.POST["content"],
         )
-        return redirect("/")
+        return redirect("/ideas/devtool/list")
 
     return render(request, 'idea/idea_devregister.html')
 
