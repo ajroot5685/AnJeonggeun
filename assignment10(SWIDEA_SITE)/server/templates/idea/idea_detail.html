@@ -14,11 +14,11 @@
     <img src="{% static 'idea/image/no_img.png' %}" alt="대체 텍스트" />
     {% endif %}
     <div id="detail_content">
-      <h1>{{ idea.title }} {% if idea.ideastars_set.exists %}
-        <div class="star"><a href="/">★</a></div>
-        {% else %}
-        <div class="star"><a href="/">☆</a></div>
-        {% endif %}</h1>
+      {% csrf_token %}
+      <h1>{{ idea.title }} <div class="star"><button id="star_value" class="star" onclick="updateStar('{{idea.pk}}', '/ideas/{{idea.pk}}')">
+        {% if idea.ideastar_set.exists %}★
+        {% else %}☆
+        {% endif %}</button></div></h1>
       <p>
         1) 아이디어 관심도
         <br />
@@ -39,7 +39,7 @@
     </div>
   </div>
   <div id="detail_action">
-    <a href="/ideas/{{idea.pk}}/delete" class="btn btn-danger btn-lg">삭제</a>
+    <a href="/ideas/devtool/{{idea.pk}}/delete" class="btn btn-danger btn-lg">삭제</a>
     <a href="/" class="btn btn-light btn-lg">목록</a>
     <a href="/ideas/{{idea.pk}}/update" class="btn btn-primary btn-lg">수정</a>
   </div>

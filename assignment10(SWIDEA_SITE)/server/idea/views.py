@@ -1,7 +1,43 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .models import Idea, Devtool, IdeaStar
 
+from django.http import JsonResponse
+
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH')=='XMLHttpRequest'
+
 def idea_list(request):
+    if is_ajax(request=request):
+        if request.POST.get("function")=="interest":
+            idea_id=request.POST.get("idea_id")
+            action = request.POST.get("action")
+
+            idea_ajax=Idea.objects.get(pk=idea_id)
+            if action=="increase" and idea_ajax.interest<10:
+                idea_ajax.interest+=1
+            elif action=="decrease" and idea_ajax.interest>0:
+                idea_ajax.interest-=1
+            idea_ajax.save()
+            response_data = {"new_interest":idea_ajax.interest}
+            return JsonResponse(response_data)
+        elif request.POST.get("function")=="star":
+            idea_id=request.POST.get("idea_id")
+            idea_ajax=Idea.objects.get(pk=idea_id)
+
+            ideastar=IdeaStar.objects.filter(idea=idea_ajax)
+            isStar=ideastar.exists()
+
+            if isStar:
+                ideastar.delete()
+                response_data = {"star":"☆"}
+            else:
+                IdeaStar.objects.create(
+                    idea=idea_ajax
+                )
+                response_data = {"star":"★"}
+            return JsonResponse(response_data)
+
+
     sort=""
 
     if request.method == "POST":
@@ -60,6 +96,23 @@ def idea_create(request):
     return render(request, 'idea/idea_create.html', context=ctx)
 
 def idea_detail(request, pk):
+    if is_ajax(request=request):
+        idea_id=request.POST.get("idea_id")
+        idea_ajax=Idea.objects.get(pk=idea_id)
+
+        ideastar=IdeaStar.objects.filter(idea=idea_ajax)
+        isStar=ideastar.exists()
+
+        if isStar:
+            ideastar.delete()
+            response_data = {"star":"☆"}
+        else:
+            IdeaStar.objects.create(
+                idea=idea_ajax
+            )
+            response_data = {"star":"★"}
+        return JsonResponse(response_data)
+
     idea = Idea.objects.get(id=pk)
 
     devtool = idea.devtool

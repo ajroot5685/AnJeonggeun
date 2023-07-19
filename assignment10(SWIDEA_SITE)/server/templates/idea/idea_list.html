@@ -19,11 +19,12 @@
   <div id="list_item">
     {% for idea in ideas %}
     <div class="idea">
-      {% if idea.ideastars_set.exists %}
-      <div class="star"><a href="/">★</a></div>
-      {% else %}
-      <div class="star"><a href="/">☆</a></div>
-      {% endif %}
+      {% csrf_token %}
+      <div class="star"><button id="star_value" class="star" onclick="updateStar('{{idea.pk}}','/')">
+        {% if idea.ideastar_set.exists %}★
+        {% else %}☆
+        {% endif %}</button></div>
+      
       <div class="idea_img">
         {% if idea.image != null and idea.image.url != "" %}
         <img src="{{ idea.image.url }}" alt="대체 텍스트" />
@@ -34,10 +35,10 @@
       <p class="bold"><a href="/ideas/{{idea.pk}}">{{ idea.title }}</a></p>
       <hr />
       <p>예상 개발 툴 : {{ idea.devtool }}</p>
-      <p>아이디어 관심도 : +<span> {{ idea.interest }} </span>-</p>
+      <p>아이디어 관심도 : <button class="interest_ajax_btn" onclick="updateInterest('{{idea.pk}}', 'increase')">+</button><span id="interest_value">{{ idea.interest }}</span>
+        <button class="interest_ajax_btn" onclick="updateInterest('{{idea.pk}}', 'decrease')">-</button></p>
     </div>
     {% endfor %}
   </div>
-  <div id="list_page">1 2</div>
-</div>
+  <div id="list_page">1 2</div> 
 {% endblock %}

@@ -108,8 +108,8 @@ main {
 
 .idea .star{
   position: absolute;
-  right: 40px;
-  top: 20px;
+  right: 20px;
+  top: 10px;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -329,4 +329,8 @@ input[type="file"] {
 
 input[type="checkbox"]{
   appearance: checkbox;
+}
+
+.interest_ajax_btn{
+  margin: 0 5px;
 }
