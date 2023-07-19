@@ -15,7 +15,7 @@
     {% endif %}
     <div id="detail_content">
       {% csrf_token %}
-      <h1>{{ idea.title }} <div class="star"><button id="star_value" class="star" onclick="updateStar('{{idea.pk}}', '/ideas/{{idea.pk}}')">
+      <h1>{{ idea.title }} <div class="star"><button id="star_value{{idea.pk}}" class="star" onclick="updateStar('{{idea.pk}}', '/ideas/{{idea.pk}}')">
         {% if idea.ideastar_set.exists %}★
         {% else %}☆
         {% endif %}</button></div></h1>
