@@ -14,7 +14,7 @@
     ![두번째 과제](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment2.png>)
   </details>
 
-- 세번째 과제 - Arsha 팀프로젝트  
+- 세번째 과제 - [팀프로젝트] Arsha  
   😂 기능 구현보단 github, gitkraken에 익숙해지는 데에 집중했습니다. merge conflict 해결 쉽지 않네요...  
   ![세번째 과제](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment3.png>)
 
@@ -28,7 +28,7 @@
   ![다섯번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment5-1.PNG>) | ![다섯번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment5-2.PNG>)
   ---|---|
 
-- 여섯번째 과제 - python 술게임 만들기  
+- 여섯번째 과제 - [팀프로젝트] python 술게임 만들기  
   😵 난이도는 쉬웠지만 높은 퀄리티를 위해 디자인에 혼신을 다했습니다. ~~프론트싫어~~  
   ![여섯번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-1.PNG>)
   ![여섯번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment6-2.PNG>)
@@ -64,4 +64,17 @@
     ![열번째 과제-3](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-3.PNG>)
     ![열번째 과제-4](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-4.PNG>)
     ![열번째 과제-5](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment10-5.PNG>)
+  </details>
+
+- 열한번째 과제 - [팀프로젝트] django CardGame 만들기  
+  😴 드디어 마지막 팀플.. 언제쯤 협업 마스터가 될 수 있을까요..  
+  <details>
+    <summary>구현 이미지</summary>
+    
+    ![열한번째 과제-1](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment11-1.PNG>)
+    ![열한번째 과제-2](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment11-2.PNG>)
+    ![열한번째 과제-3](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment11-3.PNG>)
+    ![열한번째 과제-4](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment11-4.PNG>)
+    ![열한번째 과제-5](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment11-5.PNG>)
+    ![열한번째 과제-6](<./%EA%B3%BC%EC%A0%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80(readme)/assignment11-6.PNG>)
   </details>
