@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main__container">
+        {% for post in posts %}
+            <div class="card post__container post-id-{{ post.id }}">
+                <div class="card-body">
+                    <div class="post__img">
+                        <img src="{% static 'img/img_lights.jpg' %}" alt="...">
+                    </div>
+                    <div class="card-title">{{ post.title }}</div>
+                    <div class="card-text">{{ post.content}}</div>
+                    <div class="btn btn-primary post__like" onclick="onClickLike({{post.id}}, 'like')">Like {{ post.like }}</div>
+                    <div class="btn btn-primary post__dislike" onclick="onClickLike({{post.id}}, 'dislike')">Dislike {{ post.dislike }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+{% block extra %}
+<!-- <script>
+    const requestLike = new XMLHttpRequest();
+
+    const onClickLike = (id, type) =>{
+        const url = "/like_ajax/";
+        requestLike.open("POST",url,true);
+        requestLike.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+        );
+        requestLike.send(JSON.stringify({id: id, type: type}))
+    };
+
+    requestLike.onreadystatechange=()=>{
+        if(requestLike.readyState === XMLHttpRequest.DONE){
+            if(requestLike.status<400){
+                const{id,type}=JSON.parse(requestLike.response);
+                const element = document.querySelector(`.post-id-${id} .post__${type}`);
+                const originHTML = element.innerHTML;
+                const [buttonType, num] = originHTML.split(' ');
+                const count = Number(num) + 1;
+
+                element.innerHTML = `${buttonType} ${count}`;
+            }
+        }
+    };
+</script> -->
+
+<!-- <script>
+    const onClickLike = async (id, type) =>{
+        const url = "/like_ajax/"
+        const res = await fetch(url, {
+            method:"POST",
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: JSON.stringify({id:id, type:type}),
+        });
+        const {id: postId, type: button}=await res.json();
+        likeHandleResponse(postId, button)
+    }
+
+    const likeHandleResponse = (id, type) => {
+        const element = document.querySelector(`.post-id-${id} .post__${type}`);
+        const originHTML = element.innerHTML;
+        const [buttonType, num] = originHTML.split(' ');
+        const count = Number(num)+1;
+
+        element.innerHTML = `${buttonType} ${count}`;
+    }
+</script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const onClickLike = async (id, type) =>{
+        const url = "/like_ajax/";
+        const {data} = await axios.post(url, {
+            id,
+            type,
+        });
+        likeHandleResponse(data.id, data.type);
+    }
+
+    const likeHandleResponse = (id, type) => {
+        const element = document.querySelector(`.post-id-${id} .post__${type}`);
+        const originHTML = element.innerHTML;
+        const [buttonType, num] = originHTML.split(' ');
+        const count = Number(num)+1;
+
+        element.innerHTML = `${buttonType} ${count}`;
+    }
+</script>
+
+{% endblock %}
