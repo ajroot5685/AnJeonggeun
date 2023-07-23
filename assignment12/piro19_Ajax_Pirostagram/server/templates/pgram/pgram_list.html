@@ -1,0 +1,86 @@
+{% extends "pgram/base.html" %}{% load static %} {% block content %}
+  <div id="post_list">
+    {% for post in posts %}
+    <div class="post post-id-{{ post.id }}">
+        <div class="bold">{{ post.user.username }}</div>
+      <div class="post_img">
+        {% if post.image != null and post.image.url != "" %}
+        <img src="{{ post.image.url }}" alt="대체 텍스트" />
+        {% else %}
+        <img src="{% static 'pgram/image/no_img.png' %}" alt="대체 텍스트" />
+        {% endif %}
+      </div>
+      <div class="btn_box">
+        {% if user != none %}
+            {% if user in post.like_users.all %}
+                <img src="{% static 'pgram/image/like.png' %}" alt="" onclick="onClickLike({{post.id}}, {{user.id}}, 'unlike')">
+            {% else %}
+                <img src="{% static 'pgram/image/unlike.png' %}" alt="" onclick="onClickLike({{post.id}}, {{user.id}}, 'like')">
+            {% endif %}
+        {% else %}
+            <img src="{% static 'pgram/image/unlike.png' %}" alt="">
+        {% endif %}
+        <img src="{% static 'pgram/image/comment.png' %}" alt="">
+      </div>
+      <div class="post_like">
+        <p class="bold">좋아요 {{ post.like }} 개</p>
+      </div>
+      <div class="post_content"><h2>{{post.content}}</h2></div>
+      <div class="post_comment">
+        {% for comment in comments %}
+        <p><span class="bold">{{ comment.user.username }}</span></p>{{ comment.text }}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock%}
+
+{% block extra %}
+<script>
+    const requestLike = new XMLHttpRequest();
+
+    const onClickLike = (id, userid, type) =>{
+        const url = "/like_ajax/";
+        requestLike.open("POST",url,true);
+        requestLike.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+        );
+        requestLike.send(JSON.stringify({id: id, userid: userid, type: type}))
+    };
+
+    requestLike.onreadystatechange=()=>{
+        if(requestLike.readyState === XMLHttpRequest.DONE){
+            if(requestLike.status<400){
+                const{id,userid,type}=JSON.parse(requestLike.response);
+                const element = document.querySelector(`.post-id-${id} .btn_box`);
+                let imgHTML;
+                let btntype;
+                if(type=="like"){
+                    imgHTML='../../static/pgram/image/like.png';
+                    btntype="unlike";
+                }else{
+                    imgHTML='../../static/pgram/image/unlike.png';
+                    btntype="like";
+                }
+                const newHTML = `<img src=${imgHTML} alt="" onclick="onClickLike(${id}, ${userid}, '${btntype}')">`;
+                element.innerHTML = newHTML;
+                const commentHTML = '<img src="../../static/pgram/image/comment.png" alt="">';
+                element.insertAdjacentHTML("beforeend", commentHTML);
+
+                const countelement = document.querySelector(`.post-id-${id} .post_like .bold`);
+                const originHTML = countelement.innerHTML;
+                const [buttonType, num, trash] = originHTML.split(' ');
+                let count;
+                if(type=="like"){
+                    count = Number(num) + 1;
+                }else{
+                    count = Number(num) - 1;
+                }
+                countelement.innerHTML = `좋아요 ${count} 개`;
+            }
+        }
+    };
+</script>
+{% endblock %}

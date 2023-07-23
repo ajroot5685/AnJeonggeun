@@ -1,0 +1,25 @@
+{% extends "pgram/base.html" %}{% load static %} {% block content %}
+
+<div id="register">
+  <div class="title"><h1>나만의 게시물을 작성해보세요!</h1></div>
+  <div class="form_box"><form action="/pgram/create" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br />
+    <span>이미지 : </span>
+    <br />
+    <input type="file" name="image" id="image" />
+    <br />
+    <br />
+    <span>내용 : </span>
+    <br />
+    <textarea name="content" cols="60" rows="10" required></textarea>
+    <br />
+    <br />
+    <div class="submit-box">
+      <input type="submit" value="작성 완료!" class="submit" />
+    </div>
+  </form></div>
+  
+</div>
+
+{% endblock%}

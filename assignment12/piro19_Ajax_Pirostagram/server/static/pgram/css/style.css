@@ -1,0 +1,264 @@
+@import "reset.css";
+
+@font-face {
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --color-light-green: rgb(207, 255, 129);
+  --color-gray: rgba(125, 127, 129, 0.8);
+  --color-skyblue: rgb(192, 224, 238);
+  --color-light-purple: rgb(51, 73, 151);
+  --color-wheat: #faf2e0;
+  --color-yellow: rgb(230, 226, 11);
+  /* --input-border-color: #a9a9a9;
+  --text-info-color: rgb(133, 133, 133); */
+}
+
+body,
+html {
+  font-size: 10.5px;
+  line-height: 10.5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  /* background-image: url(../../idea/image/background-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.theme_color {
+  color: var(--color-light-green);
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  padding: 20px 20px;
+  margin: 0 0;
+  /* word-spacing: -2px; */
+  border-right: 1px solid lightgray;
+}
+
+nav > h3, nav > a{
+  margin: 20px;
+}
+
+nav > h3:hover, nav > a:hover{
+  font-weight: bold;
+}
+
+main {
+  font-family: 'Roboto', sans-serif;
+  width: 80vw;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.theme_font{
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  padding: 20px 10px;
+}
+
+.login-form{
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.login-form button{
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 8px 30px;
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+}
+
+.login-form label{
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+}
+
+.login-form > input{
+  display: block;
+  margin: 10px auto 40px auto;
+}
+
+.signup-form{
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+}
+
+.signup-form input[type="submit"]{
+  background: none;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 8px 30px;
+  margin-top: 50px;
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+
+}
+
+.signup-form > input{
+  display: block;
+  margin: 10px auto 40px auto;
+}
+
+.signup-form>label{
+  display: block;
+  margin-top: 10px;
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+
+}
+
+.signup-form>span{
+  font-size: 1.2rem;
+  color: brown;
+}
+
+.signup-form > input:nth-of-type(3), .signup-form > input:nth-of-type(4){
+  margin: 10px auto 0 auto;
+}
+
+.signup-form > label:nth-of-type(3){
+  margin-top: 50px;
+}
+
+.title{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+}
+
+.title h1 {
+  text-align: center;
+      font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
+      text-transform: uppercase;
+  
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      grid-template-rows: 27px 0;
+      grid-gap: 20px;
+      align-items: center;
+  }
+  
+  .title h1:after,.title h1:before {
+      content: " ";
+      display: block;
+      border-bottom: 1px solid #c50000;
+      border-top: 1px solid #c50000;
+      height: 5px;
+    background-color:#f8f8f8;
+  }
+
+#register{
+  font-size: 1.6rem;
+}
+
+.form_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#register form{
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+#register form span, #register form input[type="submit"]{
+  font-family: 'Cafe24Supermagic-Bold-v1.0';
+
+}
+
+#register form input[type="submit"]{
+  background: none;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+#post_list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 80vw;
+  margin-top: 15px;
+}
+
+#post_list > .post {
+  background: none;
+  padding: 20px 20px 40px 20px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid lightgray;
+
+  width: 15vw;
+  height: 40vh;
+}
+
+#post_list > .post > .post_img {
+  text-align: center;
+  border: 1px solid black;
+}
+
+#post_list > .post > .post_img > img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+}
+
+#post_list > .post h2 {
+  margin: 25px 0;
+}
+
+#post_list > .post > .post_info {
+  margin-top: 20px;
+}
+
+#post_list > .post > .post_info > span {
+  color: var(--text-info-color);
+  font-weight: bold;
+}
+
+.btn_box{
+  display: flex;
+}
+
+.btn_box > img{
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}

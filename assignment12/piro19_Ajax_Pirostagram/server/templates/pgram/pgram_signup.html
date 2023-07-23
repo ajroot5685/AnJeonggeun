@@ -1,0 +1,9 @@
+{% extends 'pgram/base.html' %}
+
+{% block content %}
+<div class="title"><h1>피로스타그램에 온 것을 환영합니다!</h1></div>
+    <form method="POST" action="" class="signup-form">
+        {% csrf_token %} {{ form }}
+        <input type="submit" value="회원가입" />
+      </form>
+{% endblock %}
