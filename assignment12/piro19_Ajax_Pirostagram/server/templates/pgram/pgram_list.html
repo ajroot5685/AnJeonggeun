@@ -26,11 +26,24 @@
         <p class="bold">좋아요 {{ post.like }} 개</p>
       </div>
       <div class="post_content"><h2>{{post.content}}</h2></div>
-      <div class="post_comment">
-        {% for comment in comments %}
-        <p><span class="bold">{{ comment.user.username }}</span></p>{{ comment.text }}
-        {% endfor %}
+      <div class="post_comment_box">
+        <div class="post_comment">
+            {% for comment in comments %}
+                {% if comment.post.id == post.id %}
+                    <p><a onclick="delete_comment({{comment.id}}, {{post.id}}, {{comment.user.id}})" class="comment_delete">X</a><span class="bold">{{ comment.user.username }}</span> {{ comment.text }}</p>
+                {% endif %}
+            {% endfor %}
+          </div>
       </div>
+      
+      <div class="post_comment_add">
+        <form onsubmit="submitForm(event, {{post.id}}, {{user.id}})">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="댓글 달기..." required>
+            <input type="submit" value="작성 완료!" class="submit" />
+        </form>
+      </div>
+      
     </div>
     {% endfor %}
   </div>
@@ -79,6 +92,85 @@
                     count = Number(num) - 1;
                 }
                 countelement.innerHTML = `좋아요 ${count} 개`;
+            }
+        }
+    };
+
+    const requestDeleteComment = new XMLHttpRequest();
+
+    const delete_comment = (comment_id, post_id, user_id) =>{
+        if(user_id==null)
+            return;
+
+        const url = "/comment/delete";
+        requestDeleteComment.open("POST",url,true);
+        requestDeleteComment.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+        );
+        requestDeleteComment.send(JSON.stringify({comment_id: comment_id, post_id: post_id, user_id: user_id}))
+    };
+
+    requestDeleteComment.onreadystatechange=()=>{
+        if(requestDeleteComment.readyState === XMLHttpRequest.DONE){
+            if(requestDeleteComment.status<400){
+                const{comment_id,post_id,user_id, comments, deleted}=JSON.parse(requestDeleteComment.response);
+
+                if (deleted==false){
+                    return;
+                }
+
+                const element = document.querySelector(`.post-id-${post_id} .post_comment`);
+                element.innerHTML ='';
+
+                for (const comment of comments) {
+                    const commentElement = document.createElement('p');
+                    commentElement.innerHTML = `<a onclick="delete_comment(${comment.id}, ${post_id}, ${comment.user_id})" class="comment_delete">X</a><span class="bold">${comment.username}</span> ${comment.text}`;
+                    element.appendChild(commentElement);
+                }
+            }
+        }
+    };
+
+    const requestComment = new XMLHttpRequest();
+
+    const submitForm = (event, post_id, user_id) =>{
+        event.preventDefault();
+
+        if(user_id==null)
+            return;
+
+        const formData = new FormData(event.target);
+
+        console.log(post_id);
+        console.log(user_id);
+
+        formData.append('post_id', post_id);
+        formData.append('user_id', user_id);
+
+        const url = "/pgram/comment";
+        requestComment.open("POST",url,true);
+        requestComment.send(formData);
+
+        const inputElement = event.target.querySelector('input[name="content"]');
+        if (inputElement) {
+            inputElement.value = "";
+        }
+    };
+
+    requestComment.onreadystatechange=()=>{
+        if(requestComment.readyState === XMLHttpRequest.DONE){
+            if(requestComment.status<400){
+                const{post_id, comments}=JSON.parse(requestComment.response);
+
+                const element = document.querySelector(`.post-id-${post_id} .post_comment`);
+                element.innerHTML ='';
+
+                for (const comment of comments) {
+                    const commentElement = document.createElement('p');
+                    commentElement.innerHTML = `<a onclick="delete_comment(${comment.id}, ${post_id}, ${comment.user_id})" class="comment_delete">X</a><span class="bold">${comment.username}</span> ${comment.text}`;
+                    element.appendChild(commentElement);
+                }
             }
         }
     };

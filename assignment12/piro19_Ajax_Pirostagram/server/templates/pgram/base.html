@@ -26,7 +26,6 @@
       {% else %}
       <h3><a href="/pgram/login">게시물 작성</a></h3>
       {% endif %}
-      <h3><a href="#">메시지</a></h3>
       {% if user.is_authenticated %}
       <h3>- {{ user.username }} - 님이 로그인 중</h3>
       <a href="/pgram/logout">로그아웃</a>

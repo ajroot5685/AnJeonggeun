@@ -32,6 +32,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  position: relative;
 }
 
 h1 {
@@ -63,10 +64,13 @@ nav {
   display: flex;
   flex-direction: column;
   width: 20vw;
+  height: 100vh;
   padding: 20px 20px;
-  margin: 0 0;
   /* word-spacing: -2px; */
   border-right: 1px solid lightgray;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 nav > h3, nav > a{
@@ -78,6 +82,7 @@ nav > h3:hover, nav > a:hover{
 }
 
 main {
+  margin-left: 20vw;
   font-family: 'Roboto', sans-serif;
   width: 80vw;
 }
@@ -226,7 +231,7 @@ main {
   border-bottom: 1px solid lightgray;
 
   width: 15vw;
-  height: 40vh;
+  height: 50vh;
 }
 
 #post_list > .post > .post_img {
@@ -261,4 +266,43 @@ main {
   width: 25px;
   height: 25px;
   margin: 5px;
+}
+
+.post_comment_add > form{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.post_comment_add input{
+  border: none;
+  background: none;
+}
+
+.post_comment_add input[type="submit"]{
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.post_comment_box{
+  overflow-y: auto;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
+.post_comment{
+  word-wrap: break-word;
+}
+
+.comment_delete{
+  margin-right: 10px;
+  color: lightgray;
+}
+
+.comment_delete:hover{
+  cursor: pointer;
+  color: gray;
+}
+
+.comment_delete:visited{
+  color: lightgray;
 }

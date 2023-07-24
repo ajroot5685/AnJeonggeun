@@ -17,13 +17,83 @@ def pgram_list(request):
     else:
         current_user=None
 
+    comments=Comment.objects.all()
+
     ctx={
         'posts':posts,
         'user':current_user,
         'likes':likes,
+        'comments':comments,
     }
 
     return render(request, 'pgram/pgram_list.html', context=ctx)
+
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def pgram_comment(request):
+    user_id = request.POST.get("user_id")
+    post_id = request.POST.get("post_id")
+
+    comment_user=User.objects.get(id=user_id)
+    post=Post.objects.get(id=post_id)
+    text=request.POST.get("content")
+
+    Comment.objects.create(
+        post=post,
+        user=comment_user,
+        text=text,
+    )
+
+    comments=Comment.objects.filter(post=post)
+
+    comments_data = []
+    for item in comments:
+        user = item.user
+        comment_data={
+            'id':item.id,
+            'user_id':user.id,
+            'username':user.username,
+            'text':item.text,
+        }
+        comments_data.append(comment_data)
+
+    return JsonResponse({'post_id':post_id, 'comments':comments_data})
+
+@csrf_exempt
+def pgram_comment_delete(request):
+    req = json.loads(request.body)
+    comment_id = req['comment_id']
+    post_id = req['post_id']
+    user_id = req['user_id']
+
+    current_user = request.user
+    
+    comment=Comment.objects.get(id=comment_id)
+    post=Post.objects.get(id=post_id)
+
+    deleted=False
+
+    if user_id==current_user.id:
+        comment.delete()
+        deleted=True
+
+    comments=Comment.objects.filter(post=post)
+
+    comments_data = []
+    for item in comments:
+        user = item.user
+        comment_data={
+            'id':item.id,
+            'user_id':user.id,
+            'username':user.username,
+            'text':item.text,
+        }
+        comments_data.append(comment_data)
+
+    return JsonResponse({'comment_id':comment_id, 'post_id':post_id, 'user_id':user_id, 'comments':comments_data, 'deleted':deleted})
 
 def pgram_create(request):
 
@@ -98,10 +168,6 @@ def pgram_login(request):
 def pgram_logout(request):
     auth.logout(request)
     return redirect('/')
-
-import json
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def like_ajax(request):
