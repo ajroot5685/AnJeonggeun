@@ -1,8 +1,9 @@
 @import "reset.css";
 
 @font-face {
-  font-family: 'Cafe24Supermagic-Bold-v1.0';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+  font-family: "Cafe24Supermagic-Bold-v1.0";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2")
+    format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -22,7 +23,7 @@ body,
 html {
   font-size: 10.5px;
   line-height: 10.5px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -48,7 +49,7 @@ h2 {
 h3 {
   font-size: 1.6rem;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -73,17 +74,19 @@ nav {
   left: 0;
 }
 
-nav > h3, nav > a{
+nav > h3,
+nav > a {
   margin: 20px;
 }
 
-nav > h3:hover, nav > a:hover{
+nav > h3:hover,
+nav > a:hover {
   font-weight: bold;
 }
 
 main {
   margin-left: 20vw;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 80vw;
 }
 
@@ -91,124 +94,127 @@ main {
   font-weight: bold;
 }
 
-.theme_font{
-  font-family: 'Lobster', cursive;
+.theme_font {
+  font-family: "Lobster", cursive;
   font-size: 2rem;
   padding: 20px 10px;
 }
 
-.login-form{
+.login-form {
   text-align: center;
   font-size: 1.6rem;
 }
 
-.login-form button{
+.login-form button {
   border: 1px solid black;
   border-radius: 6px;
   padding: 8px 30px;
-  font-family: 'Cafe24Supermagic-Bold-v1.0';
+  font-family: "Cafe24Supermagic-Bold-v1.0";
 }
 
-.login-form label{
-  font-family: 'Cafe24Supermagic-Bold-v1.0';
+.login-form label {
+  font-family: "Cafe24Supermagic-Bold-v1.0";
 }
 
-.login-form > input{
+.login-form > input {
   display: block;
   margin: 10px auto 40px auto;
 }
 
-.signup-form{
+.signup-form {
   text-align: center;
   font-size: 1.6rem;
   line-height: 1.6rem;
 }
 
-.signup-form input[type="submit"]{
+.signup-form input[type="submit"] {
   background: none;
   border: 1px solid black;
   border-radius: 6px;
   padding: 8px 30px;
   margin-top: 50px;
-  font-family: 'Cafe24Supermagic-Bold-v1.0';
-
+  font-family: "Cafe24Supermagic-Bold-v1.0";
 }
 
-.signup-form > input{
+.signup-form > input {
   display: block;
   margin: 10px auto 40px auto;
 }
 
-.signup-form>label{
+.signup-form > label {
   display: block;
   margin-top: 10px;
-  font-family: 'Cafe24Supermagic-Bold-v1.0';
-
+  font-family: "Cafe24Supermagic-Bold-v1.0";
 }
 
-.signup-form>span{
+.signup-form > span {
   font-size: 1.2rem;
   color: brown;
 }
 
-.signup-form > input:nth-of-type(3), .signup-form > input:nth-of-type(4){
+.signup-form > input:nth-of-type(3),
+.signup-form > input:nth-of-type(4) {
   margin: 10px auto 0 auto;
 }
 
-.signup-form > label:nth-of-type(3){
+.signup-form > label:nth-of-type(3) {
   margin-top: 50px;
 }
 
-.title{
+.title {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 100px;
-  font-family: 'Cafe24Supermagic-Bold-v1.0';
+  font-family: "Cafe24Supermagic-Bold-v1.0";
 }
 
 .title h1 {
   text-align: center;
-      font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
-      text-transform: uppercase;
-  
-      display: grid;
-      grid-template-columns: 1fr max-content 1fr;
-      grid-template-rows: 27px 0;
-      grid-gap: 20px;
-      align-items: center;
-  }
-  
-  .title h1:after,.title h1:before {
-      content: " ";
-      display: block;
-      border-bottom: 1px solid #c50000;
-      border-top: 1px solid #c50000;
-      height: 5px;
-    background-color:#f8f8f8;
-  }
+  font-size: 30px;
+  font-weight: 300;
+  color: #222;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
-#register{
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.title h1:after,
+.title h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #c50000;
+  border-top: 1px solid #c50000;
+  height: 5px;
+  background-color: #f8f8f8;
+}
+
+#register {
   font-size: 1.6rem;
 }
 
-.form_box{
+.form_box {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#register form{
+#register form {
   display: flex;
   flex-direction: column;
   width: 40vw;
 }
 
-#register form span, #register form input[type="submit"]{
-  font-family: 'Cafe24Supermagic-Bold-v1.0';
-
+#register form span,
+#register form input[type="submit"] {
+  font-family: "Cafe24Supermagic-Bold-v1.0";
 }
 
-#register form input[type="submit"]{
+#register form input[type="submit"] {
   background: none;
   border: 1px solid black;
   border-radius: 6px;
@@ -231,7 +237,6 @@ main {
   border-bottom: 1px solid lightgray;
 
   width: 15vw;
-  height: 50vh;
 }
 
 #post_list > .post > .post_img {
@@ -258,51 +263,51 @@ main {
   font-weight: bold;
 }
 
-.btn_box{
+.btn_box {
   display: flex;
 }
 
-.btn_box > img{
+.btn_box > img {
   width: 25px;
   height: 25px;
   margin: 5px;
 }
 
-.post_comment_add > form{
+.post_comment_add > form {
   display: flex;
   justify-content: space-evenly;
 }
 
-.post_comment_add input{
+.post_comment_add input {
   border: none;
   background: none;
 }
 
-.post_comment_add input[type="submit"]{
+.post_comment_add input[type="submit"] {
   border: 1px solid black;
   border-radius: 2px;
 }
 
-.post_comment_box{
+.post_comment_box {
   overflow-y: auto;
   height: 140px;
   margin-bottom: 20px;
 }
 
-.post_comment{
+.post_comment {
   word-wrap: break-word;
 }
 
-.comment_delete{
+.comment_delete {
   margin-right: 10px;
   color: lightgray;
 }
 
-.comment_delete:hover{
+.comment_delete:hover {
   cursor: pointer;
   color: gray;
 }
 
-.comment_delete:visited{
+.comment_delete:visited {
   color: lightgray;
 }
