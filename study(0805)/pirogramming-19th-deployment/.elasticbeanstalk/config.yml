@@ -1,0 +1,9 @@
+branch-defaults:
+  main:
+    environment: main-Pirogramming-study2
+
+global:
+  application_name: pirogramming-study2
+  default_platform: Docker running on 64bit Amazon Linux 2
+  default_region: ap-northeast-2
+  sc: git
