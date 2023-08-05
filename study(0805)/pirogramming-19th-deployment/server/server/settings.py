@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-i0^$rino+bs@^oxip@9dxr^159+rrdn(pr=@k6e3fcauy0m-&q
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+# 자세히 지정하려면 아래와 같이 지정하면 된다.
+# 도메인 주소가 다음과 같을 때 http://pirogramming-study-ajg.ap-northeast-2.elasticbeanstalk.com/
+# ALLOWED_HOSTS = ["pirogramming-study-ajg.ap-northeast-2.elasticbeanstalk.com"]
 
 
 # Application definition
