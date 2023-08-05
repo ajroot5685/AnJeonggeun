@@ -7,7 +7,7 @@ COPY requirements.txt ./
 # /app으로 이동 후 requirements.txt 복사
 # copy 를 해야 docker.io/python:3.11-alpine 컨테이너 안에 넣을 수 있음
 
-RUN pip install -r requirements.txt --no-cache-dir --disable-pip-version-check
+RUN pip install -r requirements.txt --no-cache-dir --disable-pip-version-check --no-build-isolation
 
 # requirements.txt 실행
 
